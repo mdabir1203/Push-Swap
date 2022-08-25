@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 02:05:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/08/10 04:07:13 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/08/22 18:13:23 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,29 +45,21 @@ int	chk_duplicate_nbr(t_stacklst *a, int argc)
 	int	i;
 
 	i = t_plst->top;
-	
 }
 
 int main (void)
 {
-	int main()
-{
-	node_t n1, n2, n3;
-	node_t *head;
+	node_t	n1, n2, n3;
+	node_t	*head;
 
 	n1.value = 1;
 	n2.value = 2;
 	n3.value = 3;
-
 	head  = &n2;
 	n2.next = &n1;
 	n1.next = &n3;
 	n3.next = NULL;
-
 	chk_duplicate_nbr(head);
 	printlist(head);
-
-	
 	return (0);
-}
 }

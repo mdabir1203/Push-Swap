@@ -6,14 +6,12 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/08/10 04:06:11 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/08/25 17:36:48 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INSTRUCTIONS_H
 # define INSTRUCTIONS_H
-
-
 /**
  * @brief Define Constants  
  */
@@ -34,19 +32,18 @@
  * @brief My list for my Nodes
  * 
  */
-typedef struct s_plst
+typedef struct s_list
 {
-	int				nbr;
-	size_t			offset;
-	struct s_plst	*nxt;
-}	t_plst;
+	int				input;
+	struct s_list	*next;
+}	t_list;
 
 /**
  * @brief My List for my Stack
  */
 typedef struct s_stack
 {
-	t_plst	*head;
+	t_plst	**head;
 	t_plst	*end;
 	t_plst	**pos;
 	int		upper;
@@ -54,3 +51,5 @@ typedef struct s_stack
 }	t_stack;
 
 void	print_no_list(t_plist *a, t_plist *b, char *line);
+
+#endif

@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/08/10 12:11:02 by mabbas           ###   ########.fr        #
+#    Updated: 2022/08/10 12:21:56 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRCS	:= $(wildcard $(SRCDIR)/*.c)
 
 OBJS	:= $(wildcard $(SRCDIR)/*.c)
 OBJS_ 	= $(SRCS:.c=.o)
-OBJS	= $(subst $(SRCDIR),$(OBJS_))
+OBJS	= $(subst $(SRCDIR),$(OBJDIR),$(OBJS_))
 
 DDEBUG  = 
 SUBM_COND := $(shell find libft -type f)

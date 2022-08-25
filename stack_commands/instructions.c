@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 22:30:38 by mabbas            #+#    #+#             */
-/*   Updated: 2022/08/10 02:02:47 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/08/25 17:35:18 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ void	print_no_list(t_plist *a, t_plist *b, char *line)
  * @brief This defines the pushing of variables from the stack which
  * 		  is based on last in first out principle.According to the subject
  *        it is pa and pb.
- * @param src 
- * @param dst 
- * @param lastpos 
+ * 
  */
 void	ppush(t_plst **src, t_plst **dst, t_plst **lastpos)
 {
@@ -126,3 +124,5 @@ void	rrev_rotate(t_plst **head, t_plst	**last_pos)
 	(*last_pos)->next = NULL;
 	(*head)->prev = NULL;
 }
+
+ 
