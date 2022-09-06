@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_push.c                                        :+:      :+:    :+:   */
+/*   swapping.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:34:04 by mabbas            #+#    #+#             */
-/*   Updated: 2022/08/25 18:20:28 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/08/27 15:14:11 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,22 @@ void	ft_ss(t_list	**stack_a, t_list	**stack_b)
 	sa(stack_a);
 	sb(stack_b);
 	write (1, "ss\n", 3);
+}
+
+void	ft_ps_printlst(t_list *list)
+{
+	t_list	*head;
+
+	head = list;
+	if (head == NULL)
+	{
+		ft_printf("\nNULL - Empty list\n");
+		return ;
+	}
+	while (head != NULL)
+	{
+		ft_printf("\n%d", *((int *)(head->content)));
+		head = head->next;
+	}
+	ft_printf("\n");
 }

@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/08/25 17:36:48 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 00:33:02 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,26 @@ typedef struct s_list
  */
 typedef struct s_stack
 {
-	t_plst	**head;
-	t_plst	*end;
-	t_plst	**pos;
-	int		upper;
-	int		argc;
+ 	t_list	**head;
+ 	t_list	*end;
+ 	t_list	**pos;
+ 	int		upper;
+ 	int		argc;
 }	t_stack;
 
-void	print_no_list(t_plist *a, t_plist *b, char *line);
+/* ------ Argument Parsers ------ */
+
+/* ------ Node Operations ------  */
+
+t_list	*ft_new_node(int val);
+void	ft_front_add(t_list **lst, t_list *nw_node);
+void	ft_back_add(t_list **lst, t_list *nw_node);
+void	ft_del_node(t_list **stack);
+void	ft_del_stack(t_list **stack);
+
+/* ------ Arg Checkers/Error Operations ------  */
+
+
+void	print_list(t_list	*head);
 
 #endif
