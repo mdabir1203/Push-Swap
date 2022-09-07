@@ -6,11 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:34:04 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 03:13:24 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 04:02:25 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../instructions.h"
+#include "../push_swap.h"
 
 /**
  * @brief This swaps the first 2 elements at the top of stack a

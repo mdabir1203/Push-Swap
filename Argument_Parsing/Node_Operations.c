@@ -6,11 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:08:13 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 03:18:12 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 04:02:25 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../instructions.h"
+#include "../push_swap.h"
 
 /**
  * @brief Creates new node with allocated memory. Assigns param 'val' to

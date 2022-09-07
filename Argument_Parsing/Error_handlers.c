@@ -6,11 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 03:53:14 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 04:02:25 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../instructions.h"
+#include "../push_swap.h"
 
 /**
  * @brief Error Flag is taken as arg

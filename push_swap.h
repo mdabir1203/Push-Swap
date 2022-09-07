@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.h                                     :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 03:55:14 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 04:02:48 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INSTRUCTIONS_H
-# define INSTRUCTIONS_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 /**
  * @brief Define Constants  
  */
@@ -61,7 +61,7 @@ void	ft_check_valid_input(char *str, bool *error);
 
 
 /* ------ Size Checker and Partitioning ------ */
-
+int		ft_list_size(t_list *stack);
 
 
 void	print_list(t_list	*head);

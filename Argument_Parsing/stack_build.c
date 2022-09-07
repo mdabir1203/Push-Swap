@@ -6,11 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 02:05:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 03:50:28 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 04:03:10 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "instructions.h"
+#include "push_swap.h"
 
 /**
  * @brief Process the arguments(Without " ")
