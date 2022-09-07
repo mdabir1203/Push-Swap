@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node_management.c                                  :+:      :+:    :+:   */
+/*   Node_Operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:08:13 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 00:34:27 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 03:18:12 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stack_commands/instructions.h"
+#include "../instructions.h"
 
 /**
  * @brief Creates new node with allocated memory. Assigns param 'val' to
@@ -20,7 +20,7 @@
  * @param val 
  * @return t_list* 
  */
-t_list	*ft_new_node(int val)
+t_list	*ft_nw_node(int val)
 {
 	t_list	*res;
 

@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 00:33:02 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 03:55:14 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,20 @@
 //# include "ft_printf.h"
 //# include "get_next_line.h"
 # include "limits.h"
-# include  "stdlib.h"
+# include<unistd.h>
+# include<stdlib.h> // This is for error Macros
+# include<stdbool.h> // This is for boolean flags
 
-/**
- * @brief My list for my Nodes
- * 
- */
+
+
+/* ------ Struct for my list of Stack ------ */
+
 typedef struct s_list
 {
 	int				input;
 	struct s_list	*next;
 }	t_list;
 
-/**
- * @brief My List for my Stack
- */
-typedef struct s_stack
-{
- 	t_list	**head;
- 	t_list	*end;
- 	t_list	**pos;
- 	int		upper;
- 	int		argc;
-}	t_stack;
 
 /* ------ Argument Parsers ------ */
 
@@ -61,6 +52,16 @@ void	ft_del_node(t_list **stack);
 void	ft_del_stack(t_list **stack);
 
 /* ------ Arg Checkers/Error Operations ------  */
+bool	ft_stack_chk(int argc, char **argv, t_list **stack);
+
+bool	ft_found_duplicate(t_list *stack);
+void	ft_error_msg(bool error);
+void	ft_range_num_chk(unsigned int res, bool *error);
+void	ft_check_valid_input(char *str, bool *error);
+
+
+/* ------ Size Checker and Partitioning ------ */
+
 
 
 void	print_list(t_list	*head);

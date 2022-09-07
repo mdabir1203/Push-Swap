@@ -6,9 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 18:20:50 by mabbas            #+#    #+#             */
-/*   Updated: 2022/08/25 18:38:21 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/07 03:13:44 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../instructions.h"
 
 /**
  * @brief Taking the First element at the top of b and put it at 
