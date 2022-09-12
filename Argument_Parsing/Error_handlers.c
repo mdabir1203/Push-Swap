@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 04:02:25 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/08 02:04:47 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_error_msg(bool error)
 {
 	if (error == EXIT_SUCCESS)
 	{
-		write(2, "Malfunction\n", 12);
+		write(2, "Error\n", 6);
 		exit (EXIT_FAILURE);
 	}
 }
@@ -52,7 +52,6 @@ void	ft_check_valid_input(char *str, bool *error)
 
 	i = 0;
 	j = 0;
-
 	if (ft_strlen(str) > 11)
 		*error = EXIT_FAILURE;
 	if (str[0] == '\0')
