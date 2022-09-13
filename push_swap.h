@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 04:02:48 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/13 03:25:49 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@
 # include<stdlib.h> // This is for error Macros
 # include<stdbool.h> // This is for boolean flags
 
-
-
 /* ------ Struct for my list of Stack ------ */
 
 typedef struct s_list
@@ -39,7 +37,6 @@ typedef struct s_list
 	int				input;
 	struct s_list	*next;
 }	t_list;
-
 
 /* ------ Argument Parsers ------ */
 
@@ -59,11 +56,8 @@ void	ft_error_msg(bool error);
 void	ft_range_num_chk(unsigned int res, bool *error);
 void	ft_check_valid_input(char *str, bool *error);
 
-
 /* ------ Size Checker and Partitioning ------ */
 int		ft_list_size(t_list *stack);
-
-
 void	print_list(t_list	*head);
 
 #endif
