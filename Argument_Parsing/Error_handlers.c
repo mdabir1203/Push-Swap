@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/08 02:04:47 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/14 02:12:45 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_check_valid_input(char *str, bool *error)
  * @return true 
  * @return false 
  */
-bool	ft_found_duplicate(t_list *stack)
+int	ft_found_duplicate(t_list *stack)
 {
 	t_list	*cur_pos;
 	t_list	*next_node;

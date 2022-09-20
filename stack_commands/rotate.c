@@ -6,14 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:16:14 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 04:02:25 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/19 18:08:37 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-FVNRLS -->>> rmazurit !! 
-
 
 /**
  * @brief Shift up all elements of stack a by 1
@@ -82,9 +79,4 @@ void	print_list(t_list *head)
 	tmp = tmp->next;
 }
 
-int main(void)
-{
-	t_list *new;
-	new = malloc(sizeof(t_list) + 2);
-	print_list(head);
-}
+

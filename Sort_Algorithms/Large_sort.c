@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/13 05:44:33 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/19 21:52:19 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_split_stack(t_list *stack, t_list **stack_a, t_list **stack_b)
 
 	if (stack == NULL || stack->next == NULL)
 	{
-		*stack_a = source;
+		*stack_a = stack;
 		*stack_b = NULL;
 	}
 	pos_front = stack;
@@ -78,4 +78,16 @@ void	ft_mergesort(t_list **stack, t_list **stack_a, t_list **stack_b)
 	ft_mergesort(&stack_a);
 	ft_mergesort(&stack_b);
 	*stack = ft_mergesort(stack_a, stack_b);
+}
+
+int main (int argc, char **argv)
+{
+	t_list	stack;
+	size_t sz_lst;
+
+	argc = 0;
+	stack.stack_a = ft_calloc(1, sizeof(t_stack));
+	stack.stack_b = NULL;
+	
+	ft_lstnew()
 }
