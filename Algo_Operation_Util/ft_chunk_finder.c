@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:38:03 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/20 03:41:05 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/24 20:17:59 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static t_list	*ft_copy_stack(t_list *stack_a)
  */
 static void	ft_sort_stack_key(t_list **stack_key)
 {
-	struct t_stack	*stack_node;
+	t_stack			*stack_node;
 	int				ind;
 	int				lst_len;
 	int				temp;
@@ -59,9 +59,9 @@ static void	ft_sort_stack_key(t_list **stack_key)
 			{
 				temp = stack_node->input;
 				stack_node->input = stack_node->next->input;
-				stack_node->next->input = temp; 
+				stack_node->next->input = temp;
 			}
-			stack_node = stack_node->next->next;	
+			stack_node = stack_node->next->next;
 			i++;
 		}
 		i = 0;
@@ -86,8 +86,8 @@ static void	ft_sort_stack_key(t_list **stack_key)
 int	ft_next_key_finder(t_stacks *stack_key, int parts, int move)
 {
 	int	ind;
-	int size;
-	int key;
+	int	size;
+	int	key;
 
 	size = ft_lstsize(stack_key);
 	ind = size / parts;
@@ -114,3 +114,4 @@ int	ft_key(t_stacks **stack_a, t_stacks **stack_key, int parts, int move)
 	stack_key = ft_find_next_key_finder(*stack_key, parts, move);
 	return (stack_key);
 }
+
