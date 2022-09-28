@@ -6,11 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:34:04 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/07 04:02:25 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/28 04:55:30 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../Includes/push_swap.h"
 
 /**
  * @brief This swaps the first 2 elements at the top of stack a
@@ -59,22 +59,4 @@ void	ft_ss(t_list	**stack_a, t_list	**stack_b)
 	sa(stack_a);
 	sb(stack_b);
 	write (1, "ss\n", 3);
-}
-
-void	ft_ps_printlst(t_list *list)
-{
-	t_list	*head;
-
-	head = list;
-	if (head == NULL)
-	{
-		ft_printf("\nNULL - Empty list\n");
-		return ;
-	}
-	while (head != NULL)
-	{
-		ft_printf("\n%d", *((int *)(head->content)));
-		head = head->next;
-	}
-	ft_printf("\n");
 }

@@ -6,11 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 02:05:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/13 22:04:45 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/28 05:04:48 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../Includes/push_swap.h"
 
 /**
  * @brief Process the arguments(Without " ")
@@ -37,7 +37,7 @@ static void	ft_arg_process(int argc, char **argv, t_list **stack, bool *error)
 	while (i < argc)
 	{
 		val = ft_atoi(argv[i], error);
-		temp = ft_nw_node(val);
+		temp = ft_new_node(val);
 		ft_back_add(stack, temp);
 		i++;
 	}
@@ -93,7 +93,7 @@ static void	ft_split_process(char **argv, t_list **stack, bool *error)
 		ft_back_add(stack, temp);
 		i++;
 	}
-	ft_free_split(res);
+	ft_split_free(res);
 }
 
 /**

@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/08/10 12:21:56 by mabbas           ###   ########.fr        #
+#    Updated: 2022/09/28 05:25:17 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,15 +22,11 @@ else
 	CFLAGS	= -Wall -Wextra -Werror
 endif
 # Including the directories 
-HEADER  = -I includes -I libft
-libft   = ./libft/
+HEADER  = -I Includes -I libft
+LIBFT  = libft
 
-SRCDIR	= src
-SRCS	:= $(wildcard $(SRCDIR)/*.c)
-
-OBJS	:= $(wildcard $(SRCDIR)/*.c)
-OBJS_ 	= $(SRCS:.c=.o)
-OBJS	= $(subst $(SRCDIR),$(OBJDIR),$(OBJS_))
+SRCS 	= main.c \
+OBJS 	= $(SRCS:.c=.o)
 
 DDEBUG  = 
 SUBM_COND := $(shell find libft -type f)
@@ -63,7 +59,7 @@ else
 SUBM_SWITCH = 
 endif
 
-all: $(SUBM_STATE) libft banner $(NAME)
+all: $(SUBM_STATE) libft  $(NAME)
 
 submodule:
 	@git submodule init
@@ -77,15 +73,10 @@ libft:
 	@echo "____!!!$(BLUE)----- Compiling Libft------$(NC)"
 	@$(MAKE) -C $(LIBFT)
 	@$(MAKE) -C $(LIBFT) bonus
-	
-# This is stupid banner shit displaying
-banner:
-	@@echo "$(GREEN)_!!!----- Compiling Push Swap------!!!_$(NC)" 
-	@say -v Alex Compilation in Process 
 # Making it executable
 
-$(NAME): banner $(OBJS)
-	@$(CC) $(OBJS) -g $(CFLAGS) $(HEADER) $(LIBFT) libft.a $(DEBUG) -o $(NAME)
+$(NAME): $(OBJS)
+	@$(CC) $(OBJS) -g $(CFLAGS) $(HEADER) $(LIBFT)/libft.a $(DEBUG) -o $(NAME)
 	@say Have you summoned me?
 
 # Clean up your trashes 

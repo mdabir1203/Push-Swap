@@ -6,23 +6,23 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:38:03 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/24 20:17:59 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/28 04:50:47 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../Includes/push_swap.h"
 
 /**
  * @brief Creating a stack of same elements as in stack a.
  *        Copy the numbers from a to b by libft lst fnc.
  * 
  * @param stack_a 
- * @return t_list* 
+ * @return t_stack* 
  */
-static t_list	*ft_copy_stack(t_list *stack_a)
+static t_stack	*ft_copy_stack(t_stack *stack_a)
 {
-	t_list	*stack_key;
-	t_list	*temp_stack;
+	t_stack	*stack_key;
+	t_stack	*temp_stack;
 
 	stack_key = NULL;
 	while (stack_a != NULL)
@@ -41,7 +41,7 @@ static t_list	*ft_copy_stack(t_list *stack_a)
  * 
  * @param stack_key 
  */
-static void	ft_sort_stack_key(t_list **stack_key)
+static void	ft_stack_key(t_stack **stack_key)
 {
 	t_stack			*stack_node;
 	int				ind;
@@ -70,7 +70,6 @@ static void	ft_sort_stack_key(t_list **stack_key)
 	}
 }
 
-
 /**
  * @brief We partition the stack_key in no of chunks
  *        depending on stack size.
@@ -83,7 +82,7 @@ static void	ft_sort_stack_key(t_list **stack_key)
  * @param move 
  * @return int 
  */
-int	ft_next_key_finder(t_stacks *stack_key, int parts, int move)
+int	ft_next_key(t_stack *stack_key, int parts, int move)
 {
 	int	ind;
 	int	size;
@@ -92,7 +91,7 @@ int	ft_next_key_finder(t_stacks *stack_key, int parts, int move)
 	size = ft_lstsize(stack_key);
 	ind = size / parts;
 	ind *= move;
-	key = ft_pos_(stack_key, ind);
+	key = ft_pos(stack_key, ind);
 	return (key);
 }
 
@@ -114,4 +113,3 @@ int	ft_key(t_stacks **stack_a, t_stacks **stack_key, int parts, int move)
 	stack_key = ft_find_next_key_finder(*stack_key, parts, move);
 	return (stack_key);
 }
-

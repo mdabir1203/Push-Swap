@@ -6,11 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:04:44 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/24 20:13:40 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/28 04:50:56 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../Includes/push_swap.h"
 
 /**
  * @brief Finding the smallest element in stack
@@ -35,7 +35,7 @@ int	ft_min(t_stack	*stack)
 /// @brief Find the biggest element in stack
 /// @param stack 
 /// @return 
-int	ft_find_max(t_stack *stack)
+int	ft_max(t_stack *stack)
 {
 	int	max;
 
@@ -56,7 +56,7 @@ int	ft_find_max(t_stack *stack)
  * @param max 
  * @return int 
  */
-int	ft_next_max_find(t_stack *stack, int max)
+int	ft_next_max(t_stack *stack, int max)
 {
 	int	next_max;
 

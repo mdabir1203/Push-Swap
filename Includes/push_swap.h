@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/26 09:36:07 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/28 05:01:17 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
  */
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-//# include "../libft/libft.h"
+# include "../Includes/libft/libft.h"
 # include<limits.h>
 # include<unistd.h>
 # include<stdlib.h> // This is for error Macros
@@ -32,12 +32,7 @@
 
 typedef struct s_stack
 {
-	int				input;
-	int				index;
 	int				val;
-	int				pos_final;
-	int				price_a;
-	int				price_b;
 	struct s_stack	*next;
 }		t_stack;
 
@@ -46,6 +41,8 @@ typedef struct s_stack
 /* ------ Node Operations ------  */
 
 t_stack	*ft_new_node(int val);
+void	ft_lst_del_end(t_stack **stack);
+void	ft_del_stack(t_stack **stack);
 
 void	ft_print_stack(t_stack *ptr);
 
@@ -57,8 +54,54 @@ void	ft_error_msg(bool error);
 void	ft_range_num_chk(unsigned int res, bool *error);
 void	ft_check_valid_input(char *str, bool *error);
 
-/* ------ Size Checker and Partitioning ------ */
-int		ft_list_size(t_stack *stack);
+/* ------ Size Checker and Slicers ------ */
+
 void	print_list(t_stack	*head);
 
+/* ------ Sorter Utils ------ */
+
+int		ft_min(t_stack	*stack);
+int		ft_max(t_stack *stack);
+int		ft_next_max(t_stack *stack, int max);
+int		ft_slice_set(int size);
+void	ft_sort_slice_a(t_stack **stack_a, t_stack **stack_b);
+void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int min);
+void	ft_max_bottom_push(t_stack **stack_a, t_stack **stack_b, int n_max);
+void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int mid);
+void	ft_max_top_push(t_stack **stack_a, t_stack **stack_b, int n_max);
+
+/* ------ Sorters ------ */
+void	ft_push_a(t_stack **stack_a, t_stack **stack_b);
+
+/* Sorted 3 Numbers or less than 10 */
+
+void	ft_tri_sort(t_stack **stack_a);
+void	ft_sort_stack_b(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_small(t_stack **stack_a, t_stack **stack_b);
+
+/* Sorters for more than 100 numbers */
+void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val);
+void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key);
+void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key);
+void	ft_sort_large_elem(t_stack **stack_a, t_stack **stack_b);
+
+/* Sorters for the stack B */
+void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int mid);
+void	ft_max_top_push(t_stack **stack_a, t_stack **stack_b, int n_max);
+void	ft_max_bottom_push(t_stack **stack_a, t_stack **stack_b, int n_max);
+void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int min);
+void	ft_sort_slice_a(t_stack **stack_a, t_stack **stack_b);
+
+/* Stack Commands */
+void	ft_pa(t_list **stack_a, t_list **stack_b);
+void	ft_pb(t_list **stack_a, t_list **stack_b);
+void	ft_ra(t_list **stack_a);
+void	ft_rb(t_list **stack_b);
+void	ft_rr(t_list **stack_a, t_list **stack_b);
+void	ft_sa(t_list	**stack_a);
+void	ft_sb(t_list	**stack_b);
+void	ft_ss(t_list	**stack_a, t_list	**stack_b);
+void	ft_rra(t_stack **stack);
+void	ft_rrb(t_stack **stack);
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 #endif
