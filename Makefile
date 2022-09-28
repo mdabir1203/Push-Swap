@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/09/28 05:25:17 by mabbas           ###   ########.fr        #
+#    Updated: 2022/09/28 05:35:18 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,30 @@ endif
 # Including the directories 
 HEADER  = -I Includes -I libft
 LIBFT  = libft
+PUSH_SWAP = push_swap.c
 
-SRCS 	= main.c \
-OBJS 	= $(SRCS:.c=.o)
+SRCS 	= 	main.c \
+			./Algo_Operation_Util/ft_chunk_finder.c		\
+			./Algo_Operation_Util/ft_limiters.c		\
+			./Algo_Operation_Util/ft_partition.c			\
+			./Argument_Parsing/Error_handlers.c			\
+			./Argument_Parsing/stack_build.c		\
+			./Sort_Algorithms/ft_small_sorter.c			\
+			./Sort_Algorithms/ft_stack_b_sorter.c		\
+			./Sort_Algorithms/Large_sort.c		\
+			./stack_commands/pushing.c				\
+			./stack_commands/rev_rotate.c					\
+			./stack_commands/rotate.c		
+			./stack_commands/swapping.c		\
+			./Stack_Indexing/stack_operation_handlers.c				\
+			./Stack_Indexing/stack_sz_chk.c				\
+			./sorters/stack_b_sorter.c				\
+			./tools/ft_atol.c					\
+			./tools/ft_is_digit.c					\
+			./tools/ft_split.c					\
+			./tools/ft_strlen.c					\
+	
+OBJS 	= $(PUSH:SWAP:.c:.o) $(SRCS:.c=.o)
 
 DDEBUG  = 
 SUBM_COND := $(shell find libft -type f)
@@ -59,35 +80,34 @@ else
 SUBM_SWITCH = 
 endif
 
-all: $(SUBM_STATE) libft  $(NAME)
 
 submodule:
 	@git submodule init
 	@git submodule update
 
-%o : %.c
-	@echo "$(B_BLUE)Compiling: $(BLUE)$(notdir $<) $(NC)"
-	@$(CC) $(CFLAGS) -c $< -o $@
+all: $(SUBM_STATE) libft  $(NAME)
+
 
 libft:
 	@echo "____!!!$(BLUE)----- Compiling Libft------$(NC)"
 	@$(MAKE) -C $(LIBFT)
 	@$(MAKE) -C $(LIBFT) bonus
+
 # Making it executable
 
 $(NAME): $(OBJS)
-	@$(CC) $(OBJS) -g $(CFLAGS) $(HEADER) $(LIBFT)/libft.a $(DEBUG) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -g  $(HEADER) $(LIBFT)/libft.a $(DEBUG) -o $(NAME)
 	@say Have you summoned me?
 
 # Clean up your trashes 
 
 clean:
-	@rm -f $(NAME)
+	@rm -f $(OBJS)
 	@say -v Fred "Time for Trashing"
 	@echo "$(GREEN)♻️ ${B_RED} Trashing Away objects..... $(GREEN)♻️ "
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) 
 	@echo "$(GREEN)♻️ ${B_RED} Trashing Away all objects and library...."
 	
 re: fclean all
