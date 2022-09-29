@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:38:03 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:50:47 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 03:54:29 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param stack_a 
  * @return t_stack* 
  */
-static t_stack	*ft_copy_stack(t_stack *stack_a)
+t_stack	*ft_copy_stack(t_stack *stack_a)
 {
 	t_stack	*stack_key;
 	t_stack	*temp_stack;
@@ -27,8 +27,8 @@ static t_stack	*ft_copy_stack(t_stack *stack_a)
 	stack_key = NULL;
 	while (stack_a != NULL)
 	{
-		temp_stack = ft_new_node(stack_a->input);
-		ft_lstadd_back(&stack_key, temp_stack);
+		temp_stack = ft_new_node(stack_a->val);
+		ft_back_add(&stack_key, temp_stack);
 		stack_a = stack_a->next;
 	}
 	return (stack_key);
@@ -41,7 +41,7 @@ static t_stack	*ft_copy_stack(t_stack *stack_a)
  * 
  * @param stack_key 
  */
-static void	ft_stack_key(t_stack **stack_key)
+void	ft_stack_key(t_stack **stack_key)
 {
 	t_stack			*stack_node;
 	int				ind;
@@ -50,21 +50,21 @@ static void	ft_stack_key(t_stack **stack_key)
 
 	ind = 0;
 	stack_node = *stack_key;
-	lst_len = ft_lstsize(*stack_key) - 1;
+	lst_len = ft_lst_size(*stack_key) - 1;
 	while (lst_len > 0)
 	{
-		while (i < len)
+		while (ind < lst_len)
 		{
-			if (stack_node->input > stack_node->next->input)
+			if (stack_node->val > stack_node->next->val)
 			{
-				temp = stack_node->input;
-				stack_node->input = stack_node->next->input;
-				stack_node->next->input = temp;
+				temp = stack_node->val;
+				stack_node->val = stack_node->next->val;
+				stack_node->next->val = temp;
 			}
 			stack_node = stack_node->next->next;
-			i++;
+			ind++;
 		}
-		i = 0;
+		ind = 0;
 		stack_node = *stack_key;
 		lst_len--;
 	}
@@ -88,7 +88,7 @@ int	ft_next_key(t_stack *stack_key, int parts, int move)
 	int	size;
 	int	key;
 
-	size = ft_lstsize(stack_key);
+	size = ft_lst_size(stack_key);
 	ind = size / parts;
 	ind *= move;
 	key = ft_pos(stack_key, ind);
@@ -97,6 +97,10 @@ int	ft_next_key(t_stack *stack_key, int parts, int move)
 
 /**
  * @brief By combining the prev 3 func we get the Key num.
+ *        1. Creating a stack_key
+ *        2. Sorting it
+ *        3. Finding the key num
+ *        4. Delete
  * 
  * @param stack_a 
  * @param stack_key 
@@ -104,12 +108,12 @@ int	ft_next_key(t_stack *stack_key, int parts, int move)
  * @param move 
  * @return int 
  */
-int	ft_key(t_stacks **stack_a, t_stacks **stack_key, int parts, int move)
+int	ft_key(t_stack **stack_a, t_stack **stack_key, int parts, int move)
 {
 	int	key;
 
 	*stack_key = ft_copy_stack(*stack_a);
-	ft_sort_stack_key(stack_key);
-	stack_key = ft_find_next_key_finder(*stack_key, parts, move);
-	return (stack_key);
+	ft_stack_key(stack_key);
+	key = ft_next_key(*stack_key, parts, move);
+	return (key);
 }

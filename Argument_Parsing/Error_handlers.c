@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:50:18 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 04:11:25 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_error_msg(bool error)
  * @param error 
  */
 
-void	ft_range_num_chk(unsigned int res, bool *error)
+void	ft_range_num_chk(int res, bool *error)
 {
 	if ((res < INT_MIN) || (res > INT_MAX))
 	{
@@ -77,10 +77,10 @@ void	ft_check_valid_input(char *str, bool *error)
  * @return true 
  * @return false 
  */
-int	ft_found_duplicate(t_list *stack)
+int	ft_found_duplicate(t_stack *stack)
 {
-	t_list	*cur_pos;
-	t_list	*next_node;
+	t_stack	*cur_pos;
+	t_stack	*next_node;
 
 	cur_pos = stack;
 	next_node = cur_pos;
@@ -89,7 +89,7 @@ int	ft_found_duplicate(t_list *stack)
 		while (next_node->next != NULL)
 		{
 			next_node = next_node->next;
-			if (cur_pos->input == next_node->input)
+			if (cur_pos->val == next_node->val)
 				return (EXIT_FAILURE);
 		}
 		next_node = cur_pos->next;

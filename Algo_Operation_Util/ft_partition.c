@@ -6,11 +6,33 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:46:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:51:15 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 04:06:51 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
+
+/**
+ * @brief Find the elem on the Pos(provided param) in the stack.
+ * 
+ * @param stack 
+ * @param pos_to_find 
+ * @return int 
+ */
+int	ft_pos(t_stack *stack, int found_pos)
+{
+	int	pos;
+
+	if (!stack)
+		return (0);
+	pos = 1;
+	while (stack != NULL && pos != found_pos)
+	{
+		stack = stack->next;
+		pos++;
+	}
+	return (stack->val);
+}
 
 /**
  * @brief Choice of slicing the stack depends on stack size.
@@ -25,11 +47,11 @@
 int	ft_slice_set(int size)
 {
 	float	slice;
-	int		tmp_sz;
+	int		*tmp_sz;
 
 	slice = 0;
-	tmp_sz = ft_stack_sizer(size);
-	if (tmp_sz == 2)
+	tmp_sz = (int *)ft_stack_sizer(size);
+	if (*tmp_sz == 2)
 	{
 		if (size <= 25)
 			slice = 2;
@@ -40,7 +62,7 @@ int	ft_slice_set(int size)
 		else if (size <= 100)
 			slice = 5.2;
 	}
-	else if (tmp_sz == 3)
+	else if (*tmp_sz == 3)
 		slice = 14;
 	return (slice);
 }

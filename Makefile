@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/09/28 05:35:18 by mabbas           ###   ########.fr        #
+#    Updated: 2022/09/28 23:02:27 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,10 @@ else
 	CFLAGS	= -Wall -Wextra -Werror
 endif
 # Including the directories 
-HEADER  = -I Includes -I libft
-LIBFT  = libft
-PUSH_SWAP = push_swap.c
+HEADER  = -I Includes -I Includes/libft
+LIBFT  = ./Includes/libft/
 
-SRCS 	= 	main.c \
+SRCS 	= 	./pushswap.c \
 			./Algo_Operation_Util/ft_chunk_finder.c		\
 			./Algo_Operation_Util/ft_limiters.c		\
 			./Algo_Operation_Util/ft_partition.c			\
@@ -36,21 +35,16 @@ SRCS 	= 	main.c \
 			./Sort_Algorithms/ft_stack_b_sorter.c		\
 			./Sort_Algorithms/Large_sort.c		\
 			./stack_commands/pushing.c				\
-			./stack_commands/rev_rotate.c					\
-			./stack_commands/rotate.c		
+			./stack_commands/rev_rotate.c	\
+			./stack_commands/rotate.c		\
 			./stack_commands/swapping.c		\
-			./Stack_Indexing/stack_operation_handlers.c				\
-			./Stack_Indexing/stack_sz_chk.c				\
-			./sorters/stack_b_sorter.c				\
-			./tools/ft_atol.c					\
-			./tools/ft_is_digit.c					\
-			./tools/ft_split.c					\
-			./tools/ft_strlen.c					\
-	
-OBJS 	= $(PUSH:SWAP:.c:.o) $(SRCS:.c=.o)
+			./Stack_Indexing/stack_operation_handlers.c	\
+			./Stack_Indexing/stack_sz_chk.c	
+
+OBJS 	=  $(SRCS:.c=.o)
 
 DDEBUG  = 
-SUBM_COND := $(shell find libft -type f)
+SUBM_COND := $(shell find Includes/libft -type f)
 
 
 # Color Codes 
@@ -81,11 +75,16 @@ SUBM_SWITCH =
 endif
 
 
+
+all: $(SUBM_FLAG) libft $(NAME)
+
 submodule:
 	@git submodule init
 	@git submodule update
 
-all: $(SUBM_STATE) libft  $(NAME)
+%.o : %.c 
+	@echo "$(B_BLUE)Compiling: $(BLUE)$(notdir $<) 🔨$(NC)"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 
 libft:
@@ -95,8 +94,10 @@ libft:
 
 # Making it executable
 
+
+
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -g  $(HEADER) $(LIBFT)/libft.a $(DEBUG) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -g  $(HEADER) $(LIBFT)libft.a $(DEBUG) -o $(NAME)
 	@say Have you summoned me?
 
 # Clean up your trashes 
@@ -105,6 +106,7 @@ clean:
 	@rm -f $(OBJS)
 	@say -v Fred "Time for Trashing"
 	@echo "$(GREEN)♻️ ${B_RED} Trashing Away objects..... $(GREEN)♻️ "
+	@$(MAKE) -C $(LIBFT) fclean
 
 fclean: clean
 	@rm -f $(NAME) 

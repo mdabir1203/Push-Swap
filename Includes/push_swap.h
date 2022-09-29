@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 05:01:17 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 04:08:47 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ typedef struct s_stack
 /* ------ Node Operations ------  */
 
 t_stack	*ft_new_node(int val);
+void	ft_back_add(t_stack **lst, t_stack *new);
+void	ft_front_add(t_stack	**lst, t_stack	*new);
+int		ft_lst_size(t_stack *lst);
 void	ft_lst_del_end(t_stack **stack);
 void	ft_del_stack(t_stack **stack);
 
@@ -48,10 +51,10 @@ void	ft_print_stack(t_stack *ptr);
 
 /* ------ Arg Checkers/Error Operations ------  */
 bool	ft_stack_chk(int argc, char **argv, t_stack **stack);
-
+bool	ft_stack_sizer(int size);
 int		ft_found_duplicate(t_stack *stack);
 void	ft_error_msg(bool error);
-void	ft_range_num_chk(unsigned int res, bool *error);
+void	ft_range_num_chk(int res, bool *error);
 void	ft_check_valid_input(char *str, bool *error);
 
 /* ------ Size Checker and Slicers ------ */
@@ -63,6 +66,7 @@ void	print_list(t_stack	*head);
 int		ft_min(t_stack	*stack);
 int		ft_max(t_stack *stack);
 int		ft_next_max(t_stack *stack, int max);
+int		ft_pos(t_stack *stack, int found_pos);
 int		ft_slice_set(int size);
 void	ft_sort_slice_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int min);
@@ -104,4 +108,12 @@ void	ft_ss(t_list	**stack_a, t_list	**stack_b);
 void	ft_rra(t_stack **stack);
 void	ft_rrb(t_stack **stack);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
+
+/* Chunking / Slicing Commands */
+
+t_stack	*ft_copy_stack(t_stack *stack_a);
+void	ft_stack_key(t_stack **stack_key);
+int		ft_next_key(t_stack *stack_key, int parts, int move);
+int		ft_key(t_stack **stack_a, t_stack **stack_key, int parts, int move);
+
 #endif

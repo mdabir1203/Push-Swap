@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:04:44 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:50:56 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 03:55:29 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	ft_min(t_stack	*stack)
 {
 	int	min;
 
-	min = stack->input;
+	min = stack->val;
 	while (stack != NULL)
 	{
-		if (stack->input < min)
-			min = stack->input;
+		if (stack->val < min)
+			min = stack->val;
 		stack = stack->next;
 	}
 	return (min);
@@ -39,11 +39,11 @@ int	ft_max(t_stack *stack)
 {
 	int	max;
 
-	max = stack->input;
+	max = stack->val;
 	while (stack != NULL)
 	{
-		if (stack->input > max)
-			max = stack->input;
+		if (stack->val > max)
+			max = stack->val;
 		stack = stack->next;
 	}
 	return (max);
@@ -62,17 +62,17 @@ int	ft_next_max(t_stack *stack, int max)
 
 	if (!stack->next)
 		return (EXIT_SUCCESS);
-	if (stack->input != max)
-		next_max = stack->input;
+	if (stack->val != max)
+		next_max = stack->val;
 	else
 	{
-		next_max = stack->next->input;
+		next_max = stack->next->val;
 		stack = stack->next;
 	}
 	while (stack != NULL)
 	{
-		if (stack->input > next_max && stack->input < max)
-			next_max = stack->input;
+		if (stack->val > next_max && stack->val < max)
+			next_max = stack->val;
 		stack = stack->next;
 	}
 	return (next_max);
