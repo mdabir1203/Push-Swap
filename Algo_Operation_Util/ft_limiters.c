@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:04:44 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 03:55:29 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 12:31:33 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,23 @@ int	ft_next_max(t_stack *stack, int max)
 		stack = stack->next;
 	}
 	return (next_max);
+}
+
+/**
+ * @brief Find middle of the stack. 
+ *        Mid is chosen closer to the
+ *        beginning 
+ * 
+ * @param size 
+ * @return int 
+ */
+int	ft_mid(int size)
+{
+	int	mid;
+
+	if (size % 2 == 0)
+		mid = (size / 2) + 1;
+	else
+		mid = (size / 2);
+	return (mid);
 }

@@ -6,11 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 05:49:21 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:49:24 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 12:41:04 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Inlcudes/push_swap.h"
+#include "../Includes/push_swap.h"
 
 void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
 {
@@ -20,7 +20,7 @@ void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_two_sort(t_stack **stack_a)
 {
-	if ((*stack_a)->input > (*stack_a)->next->input)
+	if ((*stack_a)->val > (*stack_a)->next->val)
 		ft_sa(stack_a);
 }
 
@@ -35,16 +35,16 @@ void	ft_two_sort(t_stack **stack_a)
  * @param stack_a 
  */
 void	ft_tri_sort(t_stack **stack_a)
-{
-	t_stack		*mid;
+{	
+	t_stack		*stack_mid;
 	int			bottom;
 	int			top;
 	int			mid;
 
-	mid_stack = (*stack_a)->next;
-	top = (*stack_a)->input;
-	mid = stack_mid->input;
-	bottom = stack_mid->next->input;
+	stack_mid = (*stack_a)->next;
+	top = (*stack_a)->val;
+	mid = stack_mid->val;
+	bottom = stack_mid->next->val;
 	if (top > mid && bottom > top)
 		ft_sa(stack_a);
 	else if (top > mid && mid > bottom)
@@ -77,12 +77,12 @@ void	ft_sort_stack_b(t_stack **stack_a, t_stack **stack_b)
 	int		mid;
 	int		ind;
 
-	size = ft_lstsize(*stack_a);
+	size = ft_lst_size(*stack_a);
 	while (size > 3)
 	{
-		min = ft_min_finder(*stack_a);
-		mid = ft_mid_finder(size);
-		ind = ft_node_finder(*stack_a min);
+		min = ft_min(*stack_a);
+		mid = ft_mid(size);
+		ind = ft_node_find(*stack_a, min);
 		while (ind != 1)
 		{
 			if (ind <= mid)
@@ -91,7 +91,7 @@ void	ft_sort_stack_b(t_stack **stack_a, t_stack **stack_b)
 				ft_rra(stack_a);
 			if (ft_sorted_stack(*stack_a) == true)
 				return ;
-			ind = ft_node_finder(*stack_a, min);
+			ind = ft_node_find(*stack_a, min);
 		}
 		ft_pb(stack_a, stack_b);
 		size--;
@@ -102,16 +102,16 @@ void	ft_sort_small(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
-	size = ft_lstsize(*stack_a);
+	size = ft_lst_size(*stack_a);
 	if ((ft_sorted_stack(*stack_a)) == true)
 		return ;
-	if (sz == 2)
+	if (size == 2)
 	{
 		ft_sa(stack_a);
 		return ;
 	}
-	ft_tri_sort(stack_a, stack_b);
+	ft_sort_stack_b(stack_a, stack_b);
 	if (ft_sorted_stack(*stack_a) == false)
-		ft_remain_sort_tri(stack_a);
+		ft_tri_sort(stack_a);
 	ft_push_a(stack_a, stack_b);
 }

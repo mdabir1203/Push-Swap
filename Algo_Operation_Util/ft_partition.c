@@ -6,11 +6,40 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:46:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 04:06:51 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 12:37:03 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
+
+/**
+ * @brief This fnc search for a specified num
+ *        within the stack.
+ *        It returns the pos of the elem
+ *        First Elem is 1. If no elem or stack
+ *        too smal/ only 1 elem , return 0
+ * 
+ */
+/**
+ * @brief ft_node
+ * 
+ */
+int	ft_node_find(t_stack *stack, int found)
+{
+	int	pos;
+
+	if (!stack)
+		return (1);
+	pos = 1;
+	while (stack != NULL)
+	{
+		if (stack->val == found)
+			return (pos);
+		stack = stack->next;
+		pos++;
+	}
+	return (0);
+}
 
 /**
  * @brief Find the elem on the Pos(provided param) in the stack.

@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 18:20:50 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:53:17 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 12:22:05 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
  * @param stack_b 
  */
 
-void	ft_pa(t_list **stack_a, t_list **stack_b)
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if (!*stack_b)
 		return ;
@@ -42,7 +42,7 @@ void	ft_pa(t_list **stack_a, t_list **stack_b)
  * @param stack_a 
  * @param stack_b 
  */
-void	ft_pb(t_list **stack_a, t_list **stack_b)
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
 	int		tmp;
 

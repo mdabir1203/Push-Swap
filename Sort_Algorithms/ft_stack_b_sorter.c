@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 03:07:04 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 03:37:57 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/30 19:27:02 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * @param max 
  * @param mid 
  */
-void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int mid)
+void	ft_max_rotate(t_stack **stack_a, t_stack **stack_b, int max, int mid)
 {
 	int	max_pos;
 
@@ -103,23 +103,23 @@ void	ft_max_bottom_push(t_stack **stack_a, t_stack **stack_b, int n_max)
  * @param max 
  * @param min 
  */
-void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int min)
+void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int n_max)
 {
 	int	max_pos;
-	int	n_max_pos;
+	int	pos_n_max;
 	int	size;
 	int	mid;
 
-	size = ft_lstsize(*stack_b);
-	mid = ft_mid_find(size);
+	size = ft_lst_size(*stack_b);
+	mid = ft_mid(size);
 	max_pos = ft_node_find(*stack_b, max);
-	min_pos = ft_node_find(*stack_b, n_max);
-	if ((max_pos <= mid) && (max_pos < mid) && (pos_n_max < pos_nmax))
+	pos_n_max = ft_node_find(*stack_b, n_max);
+	if ((max_pos <= mid) && (pos_n_max < mid) && (pos_n_max < max_pos))
 	{
 		ft_max_top_push(stack_a, stack_b, n_max);
 		mid--;
 	}
-	else if ((max_pos > mid) && (pos_n_max > mid) && (pos_n_max > pos_max))
+	else if ((max_pos > mid) && (pos_n_max > mid) && (pos_n_max > max_pos))
 	{
 		ft_max_bottom_push(stack_a, stack_b, n_max);
 		mid--;
@@ -147,7 +147,7 @@ void	ft_sort_slice_a(t_stack **stack_a, t_stack **stack_b)
 	n_max = 0;
 	while (*stack_b != NULL)
 	{
-		max = ft_max_find(*stack_b);
+		max = ft_max(*stack_b);
 		if ((*stack_b)->next != NULL)
 			n_max = ft_next_max(*stack_b, max);
 		ft_max_push(stack_a, stack_b, max, n_max);

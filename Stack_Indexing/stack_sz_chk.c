@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 03:59:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:52:11 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 12:24:11 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @return true 
  * @return false 
  */
-bool	ft_sorted_stack(t_list *stack)
+bool	ft_sorted_stack(t_stack *stack)
 {
 	if (!stack->next)
 		return (false);

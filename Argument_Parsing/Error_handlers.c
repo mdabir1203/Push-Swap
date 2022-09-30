@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 04:11:25 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/09/29 12:08:33 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_range_num_chk(int res, bool *error)
 void	ft_check_valid_input(char *str, bool *error)
 {
 	int	i;
+	int j;
 
 	i = 0;
 	j = 0;
@@ -62,7 +63,7 @@ void	ft_check_valid_input(char *str, bool *error)
 		*error = EXIT_FAILURE;
 	while (str[i] != '\0')
 	{
-		if (ft_is_digit(str[i] == false))
+		if (ft_isdigit(str[i] == false))
 			*error = EXIT_FAILURE;
 		i++;
 	}
