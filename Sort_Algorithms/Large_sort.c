@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:57:14 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/03 21:12:54 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val)
 	int	pos;
 	int	sz;
 
-	sz = ft_lstsize(*stack_a);
+	sz = ft_stack_sizer(&stack_a);
 	mid = ft_mid_fin(sz);
 	pos = ft_node_find(*stack_a, val);
 	while (pos != 1)
@@ -99,7 +99,7 @@ void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key)
 	int		key;
 	int		size;
 
-	size = ft_lstsize(*stack_a);
+	size = ft_stack_sizer(*stack_a);
 	slice = ft_slice_set(size);
 	move = 1;
 	key = ft_stack_key(t_stack **stack_a, t_stack **stack_b, t_stack **st_key);
@@ -110,7 +110,7 @@ void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key)
 	while (move < slice)
 	{
 		key = ft_next_key(*st_key, slice, move);
-		push_slice_b(stack_a, stack_b, key);
+		push_slice_b(stack_a, stack_b, &key);
 		move++;
 	}
 }
@@ -139,8 +139,8 @@ void	ft_sort_large_elem(t_stack **stack_a, t_stack **stack_b)
 	if (ft_sorted_stack(*stack_a) == true)
 		return ;
 	push_slice_b(stack_a, stack_b, &st_key);
-	ft_sort_b(stack_a, stack_b);
-	ft_remain_sort_tri(stack_a);
+	ft_sort_stack_b(stack_a, stack_b);
+	ft_tri_sort(stack_a);
 	ft_sort_slice_a(stack_a, stack_b);
 	ft_del_stack(&st_key);
 }
