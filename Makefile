@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/09/28 23:02:27 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/03 20:18:35 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ else
 	CFLAGS	= -Wall -Wextra -Werror
 endif
 # Including the directories 
-HEADER  = -I Includes -I Includes/libft
+HEADER  = -I Includes -I ./Includes/libft
 LIBFT  = ./Includes/libft/
 
 SRCS 	= 	./pushswap.c \
@@ -81,6 +81,7 @@ all: $(SUBM_FLAG) libft $(NAME)
 submodule:
 	@git submodule init
 	@git submodule update
+	@git pull --recurse-submodules
 
 %.o : %.c 
 	@echo "$(B_BLUE)Compiling: $(BLUE)$(notdir $<) 🔨$(NC)"
