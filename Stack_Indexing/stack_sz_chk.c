@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 03:59:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 12:24:11 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 00:32:04 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ bool	ft_sorted_stack(t_stack *stack)
  * @return true 
  * @return false 
  */
-bool	ft_stack_sizer(int size)
+int	ft_stack_sizer(int size)
 {
 	if (size <= 10)
 		return (1);
@@ -49,5 +49,5 @@ bool	ft_stack_sizer(int size)
 	else if (size > 100)
 		return (3);
 	else
-		return (false);
+		return (0);
 }

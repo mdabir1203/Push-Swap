@@ -6,11 +6,34 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:57:14 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 01:03:19 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
+
+/**
+ * @brief While using the algo for sorting larger values I use something 
+ *        called key to divide the partition and so it is an integral
+ *        part of the algo. So I use this func as a indicator to check
+ *        the part/elem(nbr) that was pushed which are smaller/equal
+ *        to our key number.
+ * 
+ * @param stack_a 
+ * @param key 
+ * @return true 
+ * @return false 
+ */
+static	bool	ft_push_chk(t_stack *stack_a, int key)
+{
+	while (stack_a ->next != NULL)
+	{
+		if (stack_a->val <= key)
+			return (false);
+		stack_a = stack_a->next;
+	}
+	return (true);
+}
 
 /**
  * @brief Find "Value/Nbr in Stack A and push it to stack B"
@@ -34,9 +57,9 @@ void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val)
 	int	pos;
 	int	sz;
 
-	sz = ft_lstsize(*stack_a);
-	mid = ft_mid_fin(sz);
-	pos = ft_node_find(*stack_a, val);
+	sz = ft_lst_size(*stack_a);
+	mid = ft_mid(sz);
+	pos = ft_pos(*stack_a, val);
 	while (pos != 1)
 	{
 		if (pos <= mid)
@@ -47,7 +70,7 @@ void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val)
 			return ;
 		pos = ft_node_find(*stack_a, val);
 	}
-	ft_fb(stack_a, stack_b);
+	ft_pb(stack_a, stack_b);
 }
 
 /**
@@ -66,7 +89,7 @@ void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 	int		min;
 
 	tmp = *stack_a;
-	while (ft_is_pushed(*stack_a, key) == false)
+	while (ft_push_chk(*stack_a, key) == false)
 	{
 		val = tmp->val;
 		if (val <= key)
@@ -99,18 +122,18 @@ void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key)
 	int		key;
 	int		size;
 
-	size = ft_lstsize(*stack_a);
+	size = ft_lst_size(*stack_a);
 	slice = ft_slice_set(size);
 	move = 1;
-	key = ft_stack_key(t_stack **stack_a, t_stack **stack_b, t_stack **st_key);
-	push_slice_b(stack_a, st_key, parts, move);
+	key = ft_key(stack_a, st_key, slice, move);
+	ft_push_to_b(stack_a, stack_b, key);
 	move++;
 	if (ft_sorted_stack(*stack_a) == true)
 		return ;
 	while (move < slice)
 	{
 		key = ft_next_key(*st_key, slice, move);
-		push_slice_b(stack_a, stack_b, key);
+		ft_push_to_b(stack_a, stack_b, key);
 		move++;
 	}
 }
@@ -139,8 +162,8 @@ void	ft_sort_large_elem(t_stack **stack_a, t_stack **stack_b)
 	if (ft_sorted_stack(*stack_a) == true)
 		return ;
 	push_slice_b(stack_a, stack_b, &st_key);
-	ft_sort_b(stack_a, stack_b);
-	ft_remain_sort_tri(stack_a);
+	ft_sort_stack_b(stack_a, stack_b);
+	ft_tri_sort(stack_a);
 	ft_sort_slice_a(stack_a, stack_b);
 	ft_del_stack(&st_key);
 }

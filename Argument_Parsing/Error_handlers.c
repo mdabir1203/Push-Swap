@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 12:08:33 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 00:43:41 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ void	ft_range_num_chk(int res, bool *error)
 void	ft_check_valid_input(char *str, bool *error)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;
 	if (ft_strlen(str) > 11)
 		*error = EXIT_FAILURE;
-	if (str[0] == '\0')
+	else if (str[0] == '\0')
 		*error = EXIT_FAILURE;
-	if (str[i] == '-')
+	else if (str[i] == '-')
 		i++;
-	if (str[i] == '-' && str[j] == '\0')
+	else if (str[i] == '-' && str[j] == '\0')
 		*error = EXIT_FAILURE;
 	while (str[i] != '\0')
 	{
@@ -67,7 +67,7 @@ void	ft_check_valid_input(char *str, bool *error)
 			*error = EXIT_FAILURE;
 		i++;
 	}
-	ft_error_msg(*error);
+	ft_error_msg(error);
 }
 
 /**
