@@ -6,7 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/10/07 19:25:09 by mabbas           ###   ########.fr       */
+=======
+/*   Updated: 2022/10/07 01:14:03 by mabbas           ###   ########.fr       */
+>>>>>>> 55a474e1c49de86cde749549be66fbd563ff72e2
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +64,9 @@ void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val)
 	int	sz;
 
 	sz = ft_lst_size(*stack_a);
+	mid = ft_mid(sz);
+	pos = ft_pos(*stack_a, val);
+	sz = ft_stack_sizer(&stack_a);
 	mid = ft_mid(sz);
 	pos = ft_pos(*stack_a, val);
 	while (pos != 1)
