@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:16:14 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:54:16 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 19:51:45 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,33 +21,32 @@
  * 
  * @param stack_a 
  */
-void	ft_ra(t_list **stack_a)
+void	ft_ra(t_stack **stack_a)
 {
-	t_list		*tmp;
+	t_stack		*tmp;
 
 	tmp = NULL;
-	if (!*stack)
+	if (!*stack_a)
 		return ;
-	tmp = ft_new_node((*stack_a)->input);
+	tmp = ft_new_node((*stack_a)->val);
 	ft_back_add(stack_a, tmp);
 	tmp = *stack_a;
-	*stack = (*stack_a)->next;
-	free (tmp);
+	*stack_a = (*stack_a)->next;
+	free(tmp);
 	tmp = NULL;
 	write (1, "ra\n", 3);
 }
 
-void	ft_rb(t_list **stack_b)
+void	ft_rb(t_stack **stack_b)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
-	tmp = NULL;
 	if (!*stack_b)
 		return ;
-	tmp = ft_new_node((*stack_b)->input);
+	tmp = ft_new_node((*stack_b)->val);
 	ft_back_add(stack_b, tmp);
 	tmp = *stack_b;
-	*stack = (*stack_b)->next;
+	*stack_b = (*stack_b)->next;
 	free (tmp);
 	tmp = NULL;
 	write (1, "rb\n", 3);
@@ -59,24 +58,11 @@ void	ft_rb(t_list **stack_b)
  * @param stack_a 
  * @param stack_b 
  */
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
-	t_list	*tmp;
-
+	if (!*stack_a || !*stack_b)
+		return ;
 	ft_ra(stack_a);
-	printf("%d", stack_a->data)
 	ft_rb(stack_b);
 	write (1, "rr\n", 3);
 }
-
-void	print_list(t_list *head)
-{
-	t_list	*tmp;
-
-	tmp = head;
-	while (!tmp)
-		printf("%d", tmp->input);
-	tmp = tmp->next;
-}
-
-

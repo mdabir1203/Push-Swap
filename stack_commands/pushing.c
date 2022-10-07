@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 18:20:50 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 01:05:02 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 19:39:35 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b)
  */
 void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	int		tmp;
+	t_stack		*tmp;
 
 	if (!*stack_a)
 		return ;

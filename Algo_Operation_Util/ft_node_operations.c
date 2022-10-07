@@ -6,11 +6,23 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 01:31:29 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 03:44:53 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 19:38:02 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
+
+t_stack	*ft_new_node(int in_val)
+{
+	t_stack	*output;
+
+	output = malloc(sizeof(t_stack));
+	if (!output)
+		return (NULL);
+	output->val = in_val;
+	output->next = NULL;
+	return (output);
+}
 
 void	ft_back_add(t_stack **lst, t_stack *new)
 {
@@ -45,7 +57,7 @@ void	ft_front_add(t_stack	**lst, t_stack	*new)
 	}
 }
 
-int	ft_lstsize(t_stack *lst)
+int	ft_lst_size(t_stack *lst)
 {
 	t_stack	*temp;
 	size_t	count;
