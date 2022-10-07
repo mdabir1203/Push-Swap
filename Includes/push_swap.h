@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 00:28:02 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 01:30:17 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_stack
 }		t_stack;
 
 	/* ------ Argument Parsers ------ */
+
+
 
 /* ------ Node Operations ------  */
 
