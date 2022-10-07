@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 03:59:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 00:32:04 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 20:02:07 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ bool	ft_sorted_stack(t_stack *stack)
 		return (false);
 	while (stack->next != NULL)
 	{
-		if (stack->input > stack->next->input)
+		if (stack->val > stack->next->val)
 			return (false);
 		stack = stack->next;
 	}	

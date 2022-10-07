@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 19:35:24 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 20:02:23 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_print_stack(t_stack *ptr);
 
 /* ------ Arg Checkers/Error Operations ------  */
 bool	ft_stack_build(int argc, char **argv, t_stack **stack);
-bool	ft_stack_sizer(int size);
+int		ft_stack_sizer(int size);
 int		ft_found_duplicate(t_stack *stack);
 void	ft_error_msg(bool error);
 void	ft_range_num_chk(int res, bool *error);

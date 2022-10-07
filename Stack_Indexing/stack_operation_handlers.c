@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:36:26 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/28 04:51:56 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 20:01:19 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_lst_del_end(t_stack **stack)
 	tmp = *stack;
 	while (tmp->next->next != NULL)
 		tmp = tmp->next;
-	tmp->next->input = 0;
+	tmp->next->val = 0;
 	free (tmp->next);
 	tmp->next = NULL;
 }
@@ -43,12 +43,10 @@ void	ft_del_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	if ((!stack) || (!*stack))
-		return ;
 	while (*stack != NULL)
 	{
 		tmp = (*stack)->next;
-		free(*stack)
+		free(stack);
 		*stack = tmp;
 	}
 	*stack = NULL;
