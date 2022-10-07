@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 19:29:37 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 19:32:01 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,6 @@ void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key)
 	int		size;
 
 	size = ft_lst_size(*stack_a);
-	size = ft_stack_sizer(*stack_a);
 	slice = ft_slice_set(size);
 	move = 1;
 	key = ft_key(stack_a, st_key, slice, move);
@@ -137,7 +136,6 @@ void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key)
 	{
 		key = ft_next_key(*st_key, slice, move);
 		ft_push_to_b(stack_a, stack_b, key);
-		push_slice_b(stack_a, stack_b, &key);
 		move++;
 	}
 }
