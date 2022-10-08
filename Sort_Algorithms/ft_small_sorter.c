@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 05:49:21 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 12:41:04 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/08 05:19:08 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,30 +36,29 @@ void	ft_two_sort(t_stack **stack_a)
  */
 void	ft_tri_sort(t_stack **stack_a)
 {	
-	t_stack		*stack_mid;
-	int			bottom;
 	int			top;
 	int			mid;
+	int			bottom;
 
-	stack_mid = (*stack_a)->next;
 	top = (*stack_a)->val;
-	mid = stack_mid->val;
-	bottom = stack_mid->next->val;
-	if (top > mid && bottom > top)
+	mid = (*stack_a)->next->val;
+	bottom = (*stack_a)->next->next->val;
+	//bottom = stack_mid->next->val;
+	if ((top > mid) && (top < bottom) && (mid < bottom))
 		ft_sa(stack_a);
-	else if (top > mid && mid > bottom)
+	else if ((top > mid) && (top > bottom) && (mid > bottom))
 	{
 		ft_sa(stack_a);
 		ft_rra(stack_a);
 	}
-	else if (bottom > mid && top > bottom)
+	else if ((top > mid) && (top > bottom) && (mid < bottom))
 		ft_ra(stack_a);
-	else if (mid > bottom && bottom > top)
+	else if ((top < mid) && (top < bottom) && (mid > bottom))
 	{
 		ft_sa(stack_a);
 		ft_ra(stack_a);
 	}
-	else if (mid > top && top > bottom)
+	else if ((top < mid) && (top > bottom) && (mid > bottom))
 		ft_rra(stack_a);
 }
 

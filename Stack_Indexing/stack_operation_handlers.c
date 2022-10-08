@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:36:26 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 20:01:19 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 22:34:07 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_del_stack(t_stack **stack)
 	while (*stack != NULL)
 	{
 		tmp = (*stack)->next;
-		free(stack);
+		//free(stack);
 		*stack = tmp;
 	}
 	*stack = NULL;

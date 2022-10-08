@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/07 21:15:30 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/08 05:17:25 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ endif
 HEADER  = -I Includes -I ./Includes/libft
 LIBFT  = ./Includes/libft/
 
-SRCS 	= 	./push_swap.c \
+SRCS 	= 	./pushswap.c \
 			./Algo_Operation_Util/ft_chunk_finder.c		\
 			./Algo_Operation_Util/ft_limiters.c		\
 			./Algo_Operation_Util/ft_partition.c			\
@@ -42,7 +42,7 @@ SRCS 	= 	./push_swap.c \
 			./Stack_Indexing/stack_operation_handlers.c	\
 			./Stack_Indexing/stack_sz_chk.c	
 
-OBJS 	=  ${SRCS:.c=.o}
+OBJS 	=  $(SRCS:.c=.o)
 # Color Codes 
 
 NC		:= \033[m
@@ -69,11 +69,8 @@ endif
 all: libft $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -g  $(HEADER) $(LIBFT)libft.a -o $(NAME)
+	@$(CC) $(CFLAGS) -g $(OBJS) -fsanitize=address  $(HEADER) $(LIBFT)libft.a -o $(NAME)
 	@say Have you summoned me?
-
-%.o : %.c
-		$(CC) $(CFLAGS) -c $< -o $@
 
 libft:
 	@echo "____!!!$(BLUE)----- Compiling Libft------$(NC)"

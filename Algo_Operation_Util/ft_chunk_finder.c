@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:38:03 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 03:54:29 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/08 05:08:15 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	ft_stack_key(t_stack **stack_key)
 	int				lst_len;
 	int				temp;
 
-	ind = 0;
 	stack_node = *stack_key;
 	lst_len = ft_lst_size(*stack_key) - 1;
+	ind = 0;
 	while (lst_len > 0)
 	{
 		while (ind < lst_len)

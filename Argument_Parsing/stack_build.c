@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 02:05:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 00:27:44 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/08 01:10:23 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	ft_split_free(char **split)
 		split[i] = NULL;
 		i++;
 	}
-	free(split);
+	//free(split);
 	split = NULL;
 }
 
@@ -94,6 +94,7 @@ static void	ft_split_process(char **argv, t_stack **stack)
 		i++;
 	}
 	ft_split_free(split);
+
 }
 
 /**
@@ -119,12 +120,13 @@ bool	ft_stack_build(int argc, char **argv, t_stack **stack)
 
 	error = EXIT_SUCCESS;
 	if (argc == 2)
+	//	return (EXIT_SUCCESS);
 		ft_split_process(argv, stack);
 	else if (argc > 2)
 		ft_arg_process(argc, argv, stack);
 	else if (argc == 1)
 		return (EXIT_SUCCESS);
-	if (argc == 2 && ft_lst_size(*stack) == 0)
+	else if (argc == 2 && ft_lst_size(*stack) == 0)
 		ft_check_valid_input(argv[1], &error);
 	if (ft_found_duplicate(*stack) == EXIT_FAILURE)
 	{
