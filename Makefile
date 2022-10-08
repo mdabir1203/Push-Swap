@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/08 05:17:25 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/08 05:47:05 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,14 @@ SRCS 	= 	./pushswap.c \
 OBJS 	=  $(SRCS:.c=.o)
 # Color Codes 
 
+SUBM_STATE := $(shell find libs/libft -type f)
+
+ifeq ($(SUBM_STATE),)
+SUBM_FLAG	= submodule
+else 
+SUBM_FLAG	= 
+endif
+
 NC		:= \033[m
 B_RED	:= \033[1;31m
 RED 	:= \033[0;31m
@@ -66,7 +74,7 @@ else
 endif
 
 	
-all: libft $(NAME)
+all: $(SUBM_FLAG) libft $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -g $(OBJS) -fsanitize=address  $(HEADER) $(LIBFT)libft.a -o $(NAME)
