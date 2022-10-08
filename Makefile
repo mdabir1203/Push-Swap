@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/08 05:47:05 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/08 05:49:51 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,8 +73,11 @@ else
 	detected_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
 endif
 
-	
 all: $(SUBM_FLAG) libft $(NAME)
+
+submodule:
+	git submodule init
+	git submodule update
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -g $(OBJS) -fsanitize=address  $(HEADER) $(LIBFT)libft.a -o $(NAME)
