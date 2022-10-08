@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/08 05:49:51 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/08 18:21:06 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ else
 	CFLAGS	= -Wall -Wextra -Werror
 endif
 # Including the directories 
-HEADER  = -I Includes -I ./Includes/libft
-LIBFT  = ./Includes/libft/
+HEADER  = -I Includes -I ./libs/libft
+LIBFT  = ./libs/libft/
 
 SRCS 	= 	./pushswap.c \
 			./Algo_Operation_Util/ft_chunk_finder.c		\

@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 20:02:23 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/08 20:52:52 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
  */
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "../Includes/libft/libft.h"
+# include "../libs/libft/libft.h"
 # include<limits.h>
 # include<unistd.h>
 # include<stdlib.h> // This is for error Macros
@@ -56,6 +56,14 @@ int		ft_found_duplicate(t_stack *stack);
 void	ft_error_msg(bool error);
 void	ft_range_num_chk(int res, bool *error);
 void	ft_check_valid_input(char *str, bool *error);
+
+
+
+/* -------- Stack Size Checkers ----- */
+bool	ft_stack_small(int size);
+bool	ft_stack_medium(int size);
+bool	ft_stack_big(int size);
+
 
 /* ------ Size Checker and Slicers ------ */
 

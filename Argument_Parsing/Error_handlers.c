@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 00:43:41 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/08 20:45:29 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ void	ft_check_valid_input(char *str, bool *error)
 	j = 0;
 	if (ft_strlen(str) > 11)
 		*error = EXIT_FAILURE;
-	else if (str[0] == '\0')
+	if (str[0] == '\0')
 		*error = EXIT_FAILURE;
-	else if (str[i] == '-')
+	if (str[i] == '-')
 		i++;
-	else if (str[i] == '-' && str[j] == '\0')
+	if (str[i] == '-' && str[j] == '\0')
 		*error = EXIT_FAILURE;
 	while (str[i] != '\0')
 	{

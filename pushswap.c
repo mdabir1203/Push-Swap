@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:17:11 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 00:40:51 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/08 20:51:30 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	main(int argc, char **argv)
 		ft_del_stack(&stack_a);
 		return (EXIT_FAILURE);
 	}
-	size = ft_stack_sizer(ft_lst_size(stack_a));
-	if (size == 1)
+	size = ft_lst_size(stack_a);
+	if (ft_stack_small(size) == true)
 		ft_sort_small(&stack_a, &stack_b);
-	else if (size == 2 || size == 3)
+	else if (ft_stack_medium(size) == true || ft_stack_big(size) == true)
 		ft_sort_large_elem(&stack_a, &stack_b);
 	ft_del_stack(&stack_a);
 	ft_del_stack(&stack_b);
