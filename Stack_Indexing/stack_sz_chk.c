@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 03:59:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 20:02:07 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 20:38:26 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ bool	ft_sorted_stack(t_stack *stack)
  *        is amount of input numbers.
  * 
  * @param size 
- * @return true 
- * @return false 
+ * @return 
+ * @return returns the size number for large and small sort 
  */
 int	ft_stack_sizer(int size)
 {

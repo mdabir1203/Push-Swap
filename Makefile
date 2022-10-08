@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/07 19:28:13 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/07 21:15:30 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,11 @@ endif
 HEADER  = -I Includes -I ./Includes/libft
 LIBFT  = ./Includes/libft/
 
-SRCS 	= 	./pushswap.c \
+SRCS 	= 	./push_swap.c \
 			./Algo_Operation_Util/ft_chunk_finder.c		\
 			./Algo_Operation_Util/ft_limiters.c		\
 			./Algo_Operation_Util/ft_partition.c			\
+			./Algo_Operation_Util/ft_node_operations.c \
 			./Argument_Parsing/Error_handlers.c			\
 			./Argument_Parsing/stack_build.c		\
 			./Sort_Algorithms/ft_small_sorter.c			\
@@ -41,19 +42,14 @@ SRCS 	= 	./pushswap.c \
 			./Stack_Indexing/stack_operation_handlers.c	\
 			./Stack_Indexing/stack_sz_chk.c	
 
-OBJS 	=  $(SRCS:.c=.o)
-
-DDEBUG  = 
-SUBM_COND := $(shell find Includes/libft -type f)
-
-
+OBJS 	=  ${SRCS:.c=.o}
 # Color Codes 
 
-NC		:= \033[0m
+NC		:= \033[m
 B_RED	:= \033[1;31m
 RED 	:= \033[0;31m
 B_GREEN	:= \033[1;32m
-GREEN 	:= \033[0;32m
+GREEN 	:= \033[0;33m
 B_BLUE 	:= \033[1;34m
 BLUE 	:= \033[0;34m
 PURPLE	:= \033[0;35m
@@ -65,27 +61,19 @@ UNAME = $(shell uname -s)
 
 ifeq ($(UNAME),Linux)
 	VALGRIND = valgrind -q --leak-check=full --track-origin=yes
+else 
+	detected_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
 endif
 
-# Initialialize Submodule
-ifeq ($(SUBM_COND),)
-SUBM_SWITCH = submodule
-else
-SUBM_SWITCH = 
-endif
+	
+all: libft $(NAME)
 
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -g  $(HEADER) $(LIBFT)libft.a -o $(NAME)
+	@say Have you summoned me?
 
-
-all: $(SUBM_FLAG) libft $(NAME)
-
-submodule:
-	@git submodule init
-	@git submodule update
-
-%.o : %.c 
-	@echo "$(B_BLUE)Compiling: $(BLUE)$(notdir $<) 🔨$(NC)"
-	@$(CC) $(CFLAGS) -c $< -o $@
-
+%.o : %.c
+		$(CC) $(CFLAGS) -c $< -o $@
 
 libft:
 	@echo "____!!!$(BLUE)----- Compiling Libft------$(NC)"
@@ -96,9 +84,6 @@ libft:
 
 
 
-$(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -g  $(HEADER) $(LIBFT)libft.a $(DEBUG) -o $(NAME)
-	@say Have you summoned me?
 
 # Clean up your trashes 
 
@@ -114,4 +99,4 @@ fclean: clean
 	
 re: fclean all
 
-.phony: all libft clean fclean submodule
+.phony: all libft clean fclean 

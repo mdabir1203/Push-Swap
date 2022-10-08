@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:46:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 12:37:03 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/07 20:38:59 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ int	ft_pos(t_stack *stack, int found_pos)
 int	ft_slice_set(int size)
 {
 	float	slice;
-	int		*tmp_sz;
+	int		tmp_sz;
 
 	slice = 0;
-	tmp_sz = (int *)ft_stack_sizer(size);
-	if (*tmp_sz == 2)
+	tmp_sz = ft_stack_sizer(size);
+	if (tmp_sz == 2)
 	{
 		if (size <= 25)
 			slice = 2;
@@ -91,7 +91,7 @@ int	ft_slice_set(int size)
 		else if (size <= 100)
 			slice = 5.2;
 	}
-	else if (*tmp_sz == 3)
+	else if (tmp_sz == 3)
 		slice = 14;
 	return (slice);
 }
