@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 05:49:21 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/08 18:34:36 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 01:32:06 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@ void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	while (*stack_b != NULL)
 		ft_pa(stack_a, stack_b);
-}
-
-void	ft_two_sort(t_stack **stack_a)
-{
-	if ((*stack_a)->val > (*stack_a)->next->val)
-		ft_sa(stack_a);
 }
 
 /**

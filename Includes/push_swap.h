@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/08 20:52:52 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 01:12:17 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include<stdlib.h> // This is for error Macros
 # include<stdbool.h> // This is for boolean flags
 # include<assert.h>
+
+#include <stdio.h> // remove
 
 /**
  * @brief Define Constants  
@@ -51,7 +53,6 @@ void	ft_print_stack(t_stack *ptr);
 
 /* ------ Arg Checkers/Error Operations ------  */
 bool	ft_stack_build(int argc, char **argv, t_stack **stack);
-int		ft_stack_sizer(int size);
 int		ft_found_duplicate(t_stack *stack);
 void	ft_error_msg(bool error);
 void	ft_range_num_chk(int res, bool *error);

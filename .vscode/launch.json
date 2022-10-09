@@ -1,28 +1,17 @@
 {
   "version": "0.2.0",
   "configurations": [
-  {
-	"name": "(lldb) Launch",
-	"type": "cppdbg",
-	"request": "launch",
-	"program": "/Users/mabbas/Projects/Push_Swap_main/push_swap",
-	"args": ["1","4","5","6","7","8","9","15","19"] ,
-	"stopAtEntry": false,
-	"cwd": "${fileDirname}",
-	"environment": [],
-	"externalConsole": false,
-	"MIMode": "lldb"
-  },
-    {
-      "name": "(lldb) Launch",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/push_swap",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "lldb"
-    }
+	{
+		"name": "(lldb) Launch",
+		"type": "cppdbg",
+		"request": "launch",
+		"program": "${workspaceFolder}/push_swap",
+		"args": ["3", "4", "-4242", "244", "23", "5", "0", "65", "23", "7543", "22", "34"],
+		"stopAtEntry": false,
+		"cwd": "${fileDirname}",
+		"environment": [],
+		"externalConsole": false,
+		"MIMode": "lldb"
+	},
+
 }

@@ -6,12 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:38:03 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/08 05:08:15 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 01:05:16 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
-
 /**
  * @brief Creating a stack of same elements as in stack a.
  *        Copy the numbers from a to b by libft lst fnc.
@@ -49,8 +48,11 @@ void	ft_stack_key(t_stack **stack_key)
 	int				temp;
 
 	stack_node = *stack_key;
+	if (stack_node == NULL)
+		return ;
 	lst_len = ft_lst_size(*stack_key) - 1;
 	ind = 0;
+	temp = 0;
 	while (lst_len > 0)
 	{
 		while (ind < lst_len)
@@ -61,7 +63,7 @@ void	ft_stack_key(t_stack **stack_key)
 				stack_node->val = stack_node->next->val;
 				stack_node->next->val = temp;
 			}
-			stack_node = stack_node->next->next;
+			stack_node = stack_node->next;
 			ind++;
 		}
 		ind = 0;
@@ -89,6 +91,7 @@ int	ft_next_key(t_stack *stack_key, int parts, int move)
 	int	key;
 
 	size = ft_lst_size(stack_key);
+	parts = 1;
 	ind = size / parts;
 	ind *= move;
 	key = ft_pos(stack_key, ind);
@@ -116,4 +119,13 @@ int	ft_key(t_stack **stack_a, t_stack **stack_key, int parts, int move)
 	ft_stack_key(stack_key);
 	key = ft_next_key(*stack_key, parts, move);
 	return (key);
+}
+
+void	print_list(t_stack	*head)
+{
+	while (head)
+	{
+		printf("%d\n", head->val);
+		head = head->next;
+	}
 }
