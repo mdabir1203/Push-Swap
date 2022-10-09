@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/08 20:45:29 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 21:22:49 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
  */
 void	ft_error_msg(bool error)
 {
-	if (error == EXIT_SUCCESS)
+	if (error == true)
 	{
 		write(2, "Error\n", 6);
-		exit (EXIT_FAILURE);
+		exit (1);
 	}
 }
 
@@ -63,14 +63,14 @@ void	ft_check_valid_input(char *str, bool *error)
 		*error = EXIT_FAILURE;
 	while (str[i] != '\0')
 	{
-		if (ft_isdigit(str[i] == false))
+		if (ft_isdigit(str[i++]) == false)
 			*error = EXIT_FAILURE;
 		i++;
 	}
 	ft_error_msg(error);
 }
 
-/**
+/*
  * @brief Finds if there is duplicate and print error 
  *        msg accordingly.
  * 

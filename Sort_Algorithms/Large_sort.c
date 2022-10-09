@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 13:33:02 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 14:20:51 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 	tmp = *stack_a;
 	while (ft_push_chk(*stack_a, key) == false)
 	{
+		if (tmp->next != NULL)
+			return ;
 		val = tmp->val;
 		if (val <= key)
 			ft_element_push_b(stack_a, stack_b, val);

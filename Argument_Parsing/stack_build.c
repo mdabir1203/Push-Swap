@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 02:05:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/08 20:30:43 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 21:15:25 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	ft_arg_process(int argc, char **argv, t_stack **stack)
 	t_stack	*temp;
 
 	temp = NULL;
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		val = ft_atoi(argv[i]);
@@ -117,25 +117,24 @@ bool	ft_stack_build(int argc, char **argv, t_stack **stack)
 {
 	bool	error;
 
-	error = EXIT_SUCCESS;
+	error = true;
 	if (argc == 2)
-	//	return (EXIT_SUCCESS);
+	{
 		ft_split_process(argv, stack);
+		ft_check_valid_input(argv[1], &error);
+	}
 	else if (argc > 2)
 		ft_arg_process(argc, argv, stack);
 	else if (argc == 1)
-		return (EXIT_SUCCESS);
+		return (false);
 	if (argc == 2 && ft_lst_size(*stack) == 0)
 		ft_check_valid_input(argv[1], &error);
-	if (ft_found_duplicate(*stack) == EXIT_FAILURE)
+	if (ft_found_duplicate(*stack) == true)
 	{
 		ft_del_stack(stack);
 		ft_error_msg(error);
 	}
 	if (ft_lst_size(*stack) == 1)
-	{
 		ft_error_msg(error);
-		return (EXIT_SUCCESS);
-	}	
-	return (EXIT_FAILURE);
+	return (true);
 }

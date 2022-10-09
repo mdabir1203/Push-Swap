@@ -1,17 +1,17 @@
 {
   "version": "0.2.0",
   "configurations": [
-	{
-		"name": "(lldb) Launch",
-		"type": "cppdbg",
-		"request": "launch",
-		"program": "${workspaceFolder}/push_swap",
-		"args": ["3", "4", "-4242", "244", "23", "5", "0", "65", "23", "7543", "22", "34"],
-		"stopAtEntry": false,
-		"cwd": "${fileDirname}",
-		"environment": [],
-		"externalConsole": false,
-		"MIMode": "lldb"
-	},
-
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "/Users/mabbas/Projects/Push_Swap_main",
+      "program": "/Users/mabbas/Projects/Push_Swap_main/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb"
+    }
+  ]
 }
