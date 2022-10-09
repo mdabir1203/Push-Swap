@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 01:12:17 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 13:27:20 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,10 @@ void	ft_error_msg(bool error);
 void	ft_range_num_chk(int res, bool *error);
 void	ft_check_valid_input(char *str, bool *error);
 
-
-
 /* -------- Stack Size Checkers ----- */
 bool	ft_stack_small(int size);
 bool	ft_stack_medium(int size);
 bool	ft_stack_big(int size);
-
 
 /* ------ Size Checker and Slicers ------ */
 
@@ -100,10 +97,10 @@ void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key);
 void	ft_sort_large_elem(t_stack **stack_a, t_stack **stack_b);
 
 /* Sorters for the stack B */
-void	ft_max_rotate(t_stack **stack_a, t_stack **stack_b, int max, int mid);
+void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int mid);
 void	ft_max_top_push(t_stack **stack_a, t_stack **stack_b, int n_max);
 void	ft_max_bottom_push(t_stack **stack_a, t_stack **stack_b, int n_max);
-void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int min);
+void	ft_max_pushes(t_stack **stack_a, t_stack **stack_b, int max, int min);
 void	ft_sort_slice_a(t_stack **stack_a, t_stack **stack_b);
 
 /* Stack Commands */

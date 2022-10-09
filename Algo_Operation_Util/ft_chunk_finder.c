@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:38:03 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 01:05:16 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 13:32:16 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,15 @@ void	ft_stack_key(t_stack **stack_key)
  */
 int	ft_next_key(t_stack *stack_key, int parts, int move)
 {
-	int	ind;
+	int	pos;
 	int	size;
 	int	key;
 
 	size = ft_lst_size(stack_key);
-	parts = 1;
-	ind = size / parts;
-	ind *= move;
-	key = ft_pos(stack_key, ind);
+	//parts = 1;
+	pos = size / parts;
+	pos *= move;
+	key = ft_pos(stack_key, pos);
 	return (key);
 }
 

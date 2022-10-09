@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:46:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 02:05:12 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 13:19:53 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
  */
 int	ft_node_find(t_stack *stack, int found)
 {
-	int	pos;
+	int		pos;
 
 	if (!stack)
 		return (1);
@@ -38,7 +38,7 @@ int	ft_node_find(t_stack *stack, int found)
 		stack = stack->next;
 		pos++;
 	}
-	return (0);
+	return (1);
 }
 
 /**
@@ -53,7 +53,7 @@ int	ft_pos(t_stack *stack, int found_pos)
 	int	pos;
 
 	if (!stack)
-		return (0);
+		return (1);
 	pos = 1;
 	while (stack != NULL && pos != found_pos)
 	{
@@ -87,7 +87,7 @@ int	ft_slice_set(int size)
 		else if (size <= 75)
 			slice = 5;
 		else if (size <= 100)
-			slice = 6;
+			slice = 5;
 	}
 	else if (ft_stack_big(size) == true)
 		slice = 14;

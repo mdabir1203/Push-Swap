@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 03:07:04 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/30 19:27:02 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 02:33:08 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * @param max 
  * @param mid 
  */
-void	ft_max_rotate(t_stack **stack_a, t_stack **stack_b, int max, int mid)
+void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int mid)
 {
 	int	max_pos;
 
@@ -61,14 +61,6 @@ void	ft_max_top_push(t_stack **stack_a, t_stack **stack_b, int n_max)
 	ft_pa(stack_a, stack_b);
 }
 
-/**
- * @brief Similar to previous fnc but
- *        this time rev rotate it.
- * 
- * @param stack_a 
- * @param stack_b 
- * @param n_max 
- */
 void	ft_max_bottom_push(t_stack **stack_a, t_stack **stack_b, int n_max)
 {
 	int	pos_n_max;
@@ -103,7 +95,7 @@ void	ft_max_bottom_push(t_stack **stack_a, t_stack **stack_b, int n_max)
  * @param max 
  * @param min 
  */
-void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int n_max)
+void	ft_max_pushes(t_stack **stack_a, t_stack **stack_b, int max, int n_max)
 {
 	int	max_pos;
 	int	pos_n_max;
@@ -118,6 +110,8 @@ void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int n_max)
 	{
 		ft_max_top_push(stack_a, stack_b, n_max);
 		mid--;
+		ft_max_push(stack_a, stack_b, max, mid);
+		ft_sa(stack_a);
 	}
 	else if ((max_pos > mid) && (pos_n_max > mid) && (pos_n_max > max_pos))
 	{
@@ -150,6 +144,6 @@ void	ft_sort_slice_a(t_stack **stack_a, t_stack **stack_b)
 		max = ft_max(*stack_b);
 		if ((*stack_b)->next != NULL)
 			n_max = ft_next_max(*stack_b, max);
-		ft_max_push(stack_a, stack_b, max, n_max);
+		ft_max_pushes(stack_a, stack_b, max, n_max);
 	}
 }

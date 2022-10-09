@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 01:42:41 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/09 13:33:02 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val)
 
 	sz = ft_lst_size(*stack_a);
 	mid = ft_mid(sz);
-	pos = ft_pos(*stack_a, val);
+	pos = ft_node_find(*stack_a, val);
 	while (pos != 1)
 	{
 		if (pos <= mid)
