@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 00:35:36 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/14 02:28:58 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 03:32:04 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ long	ft_atol(char *str, bool *error)
 		sign *= (-1);
 		i++;
 	}
+	else if (str[i] == '+')
+		str++;
 	while (str[i] != '\0')
 	{
 		res = (str[i] - '0') + (res * 10);

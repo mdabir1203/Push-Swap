@@ -6,21 +6,21 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:17:11 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/14 03:20:52 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 03:50:15 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Includes/push_swap.h"
 #include <stdio.h>
 
-void	print_list(t_stack	*head)
-{
-	while (head)
-	{
-		printf("%2d\n", head->val);
-		head = head->next;
-	}
-}
+// void	print_list(t_stack	*head)
+// {
+// 	while (head)
+// 	{
+// 		printf("%2d\n", head->val);
+// 		head = head->next;
+// 	}
+// }
 
 int	main(int argc, char **argv)
 {
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 		ft_sort_small(&stack_a, &stack_b);
 	else if (ft_stack_medium(size) == true || ft_stack_big(size) == true)
 		ft_sort_large_elem(&stack_a, &stack_b);
-	print_list(stack_a);
+	// print_list(stack_a);
 	ft_del_stack(&stack_a);
 	ft_del_stack(&stack_b);
 	return (0);
