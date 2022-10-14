@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:38:03 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 13:32:16 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 03:12:23 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_stack	*ft_copy_stack(t_stack *stack_a)
  * 
  * @param stack_key 
  */
-void	ft_stack_key(t_stack **stack_key)
+static void	ft_stack_key(t_stack **stack_key)
 {
 	t_stack			*stack_node;
 	int				ind;
@@ -48,11 +48,11 @@ void	ft_stack_key(t_stack **stack_key)
 	int				temp;
 
 	stack_node = *stack_key;
-	if (stack_node == NULL)
-		return ;
+	// if (stack_node == NULL)
+	// 	return ;
 	lst_len = ft_lst_size(*stack_key) - 1;
 	ind = 0;
-	temp = 0;
+	// temp = 0;
 	while (lst_len > 0)
 	{
 		while (ind < lst_len)
@@ -119,13 +119,4 @@ int	ft_key(t_stack **stack_a, t_stack **stack_key, int parts, int move)
 	ft_stack_key(stack_key);
 	key = ft_next_key(*stack_key, parts, move);
 	return (key);
-}
-
-void	print_list(t_stack	*head)
-{
-	while (head)
-	{
-		printf("%d\n", head->val);
-		head = head->next;
-	}
 }

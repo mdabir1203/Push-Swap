@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 21:22:49 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 02:33:59 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 /**
  * @brief Error Flag is taken as arg
- *        If flag true input valid ->
- *        display error msg and used
- *        macro for return value.
+ *        If flag true input invalid ->
+ *        display error msg and return true
+ * 		  otherwise false.
  * @param error 
  */
 void	ft_error_msg(bool error)
@@ -24,7 +24,7 @@ void	ft_error_msg(bool error)
 	if (error == true)
 	{
 		write(2, "Error\n", 6);
-		exit (1);
+		exit (EXIT_FAILURE);
 	}
 }
 
@@ -37,37 +37,47 @@ void	ft_error_msg(bool error)
  * @param error 
  */
 
-void	ft_range_num_chk(int res, bool *error)
+void	ft_range_num_chk(long res, bool *error)
 {
 	if ((res < INT_MIN) || (res > INT_MAX))
 	{
-		*error = EXIT_FAILURE;
+		*error = true;
 		ft_error_msg(error);
 	}
 }
 
+/**
+ * @brief A 0 before no will be ignored
+ *         -0 not considered an error
+          Error flag true if:
+		1. Len is > 11 (MIN_INT len incl. - sign)
+		2. more than 1 minus sign
+		3. Arg not a digit
+		4. No arg provided (String empty)
+ * 
+ * @param str 
+ * @param error 
+ */
 void	ft_check_valid_input(char *str, bool *error)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	j = 0;
 	if (ft_strlen(str) > 11)
-		*error = EXIT_FAILURE;
+		*error = true;
+	i = 0;
 	if (str[0] == '\0')
-		*error = EXIT_FAILURE;
+		*error = true;
 	if (str[i] == '-')
 		i++;
-	if (str[i] == '-' && str[j] == '\0')
-		*error = EXIT_FAILURE;
+	if (str[0] == '-' && str[1] == '\0')
+		*error = true;
 	while (str[i] != '\0')
 	{
-		if (ft_isdigit(str[i++]) == false)
-			*error = EXIT_FAILURE;
+		if (ft_isdigit(str[i]) == 0)
+			*error = true;
 		i++;
 	}
-	ft_error_msg(error);
+	ft_error_msg(*error);
 }
 
 /*

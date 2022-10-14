@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 01:31:29 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 13:54:01 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 02:09:02 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	ft_lst_size(t_stack *lst)
 	return (count);
 }
 
-void	ft_last_node_del(t_stack	**stack)
+void	ft_lst_del_end(t_stack	**stack)
 {
 	t_stack	*temp;
 

@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:04:44 by mabbas            #+#    #+#             */
-/*   Updated: 2022/09/29 12:31:33 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 00:32:55 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_min(t_stack	*stack)
 {
 	int	min;
 
+	if (!stack || !stack->next)
+		return (INT_MAX);
 	min = stack->val;
 	while (stack != NULL)
 	{
@@ -32,13 +34,15 @@ int	ft_min(t_stack	*stack)
 	return (min);
 }
 
-/// @brief Find the biggest element in stack
+/// @brief Find the biggest element in stack (Check for empty & return INT_MIN)
 /// @param stack 
 /// @return 
 int	ft_max(t_stack *stack)
 {
 	int	max;
 
+	if (!stack)
+		return (INT_MIN);
 	max = stack->val;
 	while (stack != NULL)
 	{
@@ -61,7 +65,7 @@ int	ft_next_max(t_stack *stack, int max)
 	int	next_max;
 
 	if (!stack->next)
-		return (EXIT_SUCCESS);
+		return (0);
 	if (stack->val != max)
 		next_max = stack->val;
 	else
@@ -76,23 +80,4 @@ int	ft_next_max(t_stack *stack, int max)
 		stack = stack->next;
 	}
 	return (next_max);
-}
-
-/**
- * @brief Find middle of the stack. 
- *        Mid is chosen closer to the
- *        beginning 
- * 
- * @param size 
- * @return int 
- */
-int	ft_mid(int size)
-{
-	int	mid;
-
-	if (size % 2 == 0)
-		mid = (size / 2) + 1;
-	else
-		mid = (size / 2);
-	return (mid);
 }

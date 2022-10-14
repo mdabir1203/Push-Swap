@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 13:27:20 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 02:06:15 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,6 @@
 # include<unistd.h>
 # include<stdlib.h> // This is for error Macros
 # include<stdbool.h> // This is for boolean flags
-# include<assert.h>
-
-#include <stdio.h> // remove
-
-/**
- * @brief Define Constants  
- */
-# define MAX_INTVAL	2147483648
-# define ERR_GENERIC "Error\n"
 
 /* ------ Struct for my list of Stack ------ */
 
@@ -37,8 +28,6 @@ typedef struct s_stack
 	int				val;
 	struct s_stack	*next;
 }		t_stack;
-
-	/* ------ Argument Parsers ------ */
 
 /* ------ Node Operations ------  */
 
@@ -55,10 +44,14 @@ void	ft_print_stack(t_stack *ptr);
 bool	ft_stack_build(int argc, char **argv, t_stack **stack);
 int		ft_found_duplicate(t_stack *stack);
 void	ft_error_msg(bool error);
-void	ft_range_num_chk(int res, bool *error);
+void	ft_range_num_chk(long res, bool *error);
 void	ft_check_valid_input(char *str, bool *error);
 
+	/* ------ Modified libft functions (Arg parsing helpers ------ */
+	/* ------ Argument Parsers ------ */
+long	ft_atol(char *str, bool *error);
 /* -------- Stack Size Checkers ----- */
+bool	ft_sorted_stack(t_stack *stack);
 bool	ft_stack_small(int size);
 bool	ft_stack_medium(int size);
 bool	ft_stack_big(int size);
@@ -70,11 +63,13 @@ void	print_list(t_stack	*head);
 /* ------ Sorter Utils ------ */
 
 int		ft_min(t_stack	*stack);
-int		ft_mid(int size);
 int		ft_max(t_stack *stack);
 int		ft_next_max(t_stack *stack, int max);
+int		ft_mid(int size);
 int		ft_pos(t_stack *stack, int found_pos);
+int		ft_find_middle(int size);
 int		ft_slice_set(int size);
+
 void	ft_sort_slice_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_max_push(t_stack **stack_a, t_stack **stack_b, int max, int min);
 void	ft_max_bottom_push(t_stack **stack_a, t_stack **stack_b, int n_max);
@@ -89,7 +84,6 @@ void	ft_push_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_tri_sort(t_stack **stack_a);
 void	ft_sort_stack_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_small(t_stack **stack_a, t_stack **stack_b);
-bool	ft_sorted_stack(t_stack *stack);
 /* Sorters for more than 100 numbers */
 void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val);
 void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key);
@@ -119,7 +113,6 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 /* Chunking / Slicing Commands */
 
 t_stack	*ft_copy_stack(t_stack *stack_a);
-void	ft_stack_key(t_stack **stack_key);
 int		ft_next_key(t_stack *stack_key, int parts, int move);
 int		ft_key(t_stack **stack_a, t_stack **stack_key, int parts, int move);
 

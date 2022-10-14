@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/09 20:34:45 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/14 02:17:05 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,8 @@ SRCS 	= 	./pushswap.c \
 			./stack_commands/rev_rotate.c	\
 			./stack_commands/rotate.c		\
 			./stack_commands/swapping.c		\
-			./Stack_Indexing/stack_operation_handlers.c	\
-			./Stack_Indexing/stack_sz_chk.c	
+			./Stack_Indexing/stack_sz_chk.c	\
+			./Algo_Operation_Util/ft_tools.c
 
 OBJS 	=  $(SRCS:.c=.o)
 # Color Codes 
@@ -79,8 +79,8 @@ submodule:
 	git submodule init
 	git submodule update
 
-$(NAME): $(OBJS) #
-	@$(CC) $(CFLAGS) -g $(OBJS) $(HEADER) $(LIBFT)libft.a -o $(NAME)
+$(NAME): $(OBJS) 
+	@$(CC) $(CFLAGS) -g -fsanitize=address $(OBJS) $(HEADER) $(LIBFT)libft.a -o $(NAME)
 	@say Have you summoned me?
 
 libft:
@@ -96,7 +96,7 @@ libft:
 # Clean up your trashes 
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) objs
 	@say -v Fred "Time for Trashing"
 	@echo "$(GREEN)♻️ ${B_RED} Trashing Away objects..... $(GREEN)♻️ "
 	@$(MAKE) -C $(LIBFT) fclean

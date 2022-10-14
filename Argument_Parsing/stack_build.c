@@ -6,11 +6,33 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 02:05:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 21:15:25 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 02:53:10 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
+
+/**
+ * @brief Delete the whole stack
+ * 
+ * @param stack 
+ */
+void	ft_del_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*current;
+
+	current = *stack;
+	if (!stack || !current)
+		return ;
+	while (current != NULL)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+	}
+	*stack = NULL;
+}
 
 /**
  * @brief Process the arguments(Without " ")
@@ -26,17 +48,17 @@
  * @param error 
  */
 
-static void	ft_arg_process(int argc, char **argv, t_stack **stack)
+static void	ft_arg_process(int argc, char **argv, t_stack **stack, bool *error)
 {
 	int		i;
 	int		val;
 	t_stack	*temp;
 
 	temp = NULL;
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
-		val = ft_atoi(argv[i]);
+		val = ft_atol(argv[i], error);
 		temp = ft_new_node(val);
 		ft_back_add(stack, temp);
 		i++;
@@ -60,7 +82,7 @@ static void	ft_split_free(char **split)
 		split[i] = NULL;
 		i++;
 	}
-	//free(split);
+	free(split);
 	split = NULL;
 }
 
@@ -76,7 +98,7 @@ static void	ft_split_free(char **split)
  * @param stack 
  * @param error 
  */
-static void	ft_split_process(char **argv, t_stack **stack)
+static void	ft_split_process(char **argv, t_stack **stack, bool *error)
 {
 	t_stack	*temp;
 	char	**split;
@@ -85,10 +107,10 @@ static void	ft_split_process(char **argv, t_stack **stack)
 
 	i = 0;
 	temp = NULL;
-	split = ft_split(argv[1], ' ');
+	split = ft_split(argv[i++], ' ');
 	while (split[i] != NULL)
 	{
-		val = ft_atoi(split[i]);
+		val = ft_atol(split[i], error);
 		temp = ft_new_node(val);
 		ft_back_add(stack, temp);
 		i++;
@@ -117,14 +139,11 @@ bool	ft_stack_build(int argc, char **argv, t_stack **stack)
 {
 	bool	error;
 
-	error = true;
+	error = false;
 	if (argc == 2)
-	{
-		ft_split_process(argv, stack);
-		ft_check_valid_input(argv[1], &error);
-	}
+		ft_split_process(argv, stack, &error);
 	else if (argc > 2)
-		ft_arg_process(argc, argv, stack);
+		ft_arg_process(argc, argv, stack, &error);
 	else if (argc == 1)
 		return (false);
 	if (argc == 2 && ft_lst_size(*stack) == 0)
@@ -132,9 +151,9 @@ bool	ft_stack_build(int argc, char **argv, t_stack **stack)
 	if (ft_found_duplicate(*stack) == true)
 	{
 		ft_del_stack(stack);
-		ft_error_msg(error);
+		ft_error_msg(true);
 	}
 	if (ft_lst_size(*stack) == 1)
-		ft_error_msg(error);
+		return (false);
 	return (true);
 }

@@ -6,12 +6,27 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:46:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 13:19:53 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/14 02:52:19 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
+/**
+ * @brief FInd the mid of the stack 
+ * 
+ */
+
+int	ft_mid(int size)
+{
+	int	mid;
+
+	if (size % 2 == 0)
+		mid = (size / 2) + 1;
+	else
+		mid = (size / 2);
+	return (mid);
+}
 /**
  * @brief This fnc search for a specified num
  *        within the stack.
@@ -24,6 +39,7 @@
  * @brief ft_node
  * 
  */
+
 int	ft_node_find(t_stack *stack, int found)
 {
 	int		pos;
@@ -53,7 +69,7 @@ int	ft_pos(t_stack *stack, int found_pos)
 	int	pos;
 
 	if (!stack)
-		return (1);
+		return (0);
 	pos = 1;
 	while (stack != NULL && pos != found_pos)
 	{
@@ -75,7 +91,7 @@ int	ft_pos(t_stack *stack, int found_pos)
  */
 int	ft_slice_set(int size)
 {
-	int		slice;
+	float		slice;
 
 	slice = 0;
 	if (ft_stack_medium(size) == true)
