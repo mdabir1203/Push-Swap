@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:46:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/14 02:52:19 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/17 23:23:07 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_node_find(t_stack *stack, int found)
  * @brief Find the elem on the Pos(provided param) in the stack.
  * 
  * @param stack 
- * @param pos_to_find 
+ * @param found_pos
  * @return int 
  */
 int	ft_pos(t_stack *stack, int found_pos)
@@ -103,7 +103,7 @@ int	ft_slice_set(int size)
 		else if (size <= 75)
 			slice = 5;
 		else if (size <= 100)
-			slice = 5;
+			slice = 5.2;
 	}
 	else if (ft_stack_big(size) == true)
 		slice = 14;

@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 14:20:51 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/17 23:30:13 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static	bool	ft_push_chk(t_stack *stack_a, int key)
  * @param stack_b 
  * @param val 
  */
-void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val)
+static void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val)
 {
 	int	mid;
 	int	pos;
@@ -84,7 +84,7 @@ void	ft_element_push_b(t_stack **stack_a, t_stack **stack_b, int val)
  * @param stack_b 
  * @param key 
  */
-void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
+static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 {
 	t_stack	*tmp;
 	int		val;
@@ -93,8 +93,6 @@ void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 	tmp = *stack_a;
 	while (ft_push_chk(*stack_a, key) == false)
 	{
-		if (tmp->next != NULL)
-			return ;
 		val = tmp->val;
 		if (val <= key)
 			ft_element_push_b(stack_a, stack_b, val);
@@ -119,7 +117,7 @@ void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
  * @param stack_b 
  * @param st_key 
  */
-void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key)
+static void	push_slice_b(t_stack **stack_a, t_stack **stack_b, t_stack **st_key)
 {
 	int		move;
 	int		slice;

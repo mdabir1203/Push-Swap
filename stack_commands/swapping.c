@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:34:04 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/07 19:55:48 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/17 23:54:58 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@
  * 
  * @param stack 
  */
-void	ft_sa(t_stack	**stack_a)
+void	ft_sa(t_stack	**stack)
 {
 	int		tmp;
 
-	if (!*stack_a || !(*stack_a)->next)
+	if (!*stack || !(*stack)->next)
 		return ;
-	tmp = (*stack_a)->val;
-	(*stack_a)->val = (*stack_a)->next->val;
-	(*stack_a)->next->val = tmp;
-	if (true)
-		write (1, "sa\n", 3);
+	tmp = (*stack)->val;
+	(*stack)->val = (*stack)->next->val;
+	(*stack)->next->val = tmp;
+	write (1, "sa\n", 3);
 }
 
 /**
@@ -37,28 +36,28 @@ void	ft_sa(t_stack	**stack_a)
  * 
  * @param stack_b 
  */
-void	ft_sb(t_stack	**stack_b)
+void	ft_sb(t_stack	**stack)
 {
 	int	tmp;
 
-	if (!*stack_b || !(*stack_b)->next)
+	if (!*stack || !(*stack)->next)
 		return ;
-	tmp = (*stack_b)->val;
-	(*stack_b)->val = (*stack_b)->next->val;
-	(*stack_b)->next->val = tmp;
+	tmp = (*stack)->val;
+	(*stack)->val = (*stack)->next->val;
+	(*stack)->next->val = tmp;
 	write (1, "sb\n", 3);
 }
 
-/**
- * @brief ss ( sa and sb at the same time)
- * 
- */
+// /**
+//  * @brief ss ( sa and sb at the same time)
+//  * 
+//  */
 
-void	ft_ss(t_stack	**stack_a, t_stack	**stack_b)
-{
-	if (!stack_a || !stack_b)
-		return ;
-	ft_sa(stack_a);
-	ft_sb(stack_b);
-	write (1, "ss\n", 3);
-}
+// void	ft_ss(t_stack	**stack_a, t_stack	**stack_b)
+// {
+// 	if (!stack_a || !stack_b)
+// 		return ;
+// 	ft_sa(stack_a);
+// 	ft_sb(stack_b);
+// 	write (1, "ss\n", 3);
+// }

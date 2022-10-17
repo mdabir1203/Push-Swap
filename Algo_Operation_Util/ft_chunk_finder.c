@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:38:03 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/14 03:12:23 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/17 23:20:43 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,8 @@ static void	ft_stack_key(t_stack **stack_key)
 	int				temp;
 
 	stack_node = *stack_key;
-	// if (stack_node == NULL)
-	// 	return ;
 	lst_len = ft_lst_size(*stack_key) - 1;
 	ind = 0;
-	// temp = 0;
 	while (lst_len > 0)
 	{
 		while (ind < lst_len)
@@ -84,15 +81,14 @@ static void	ft_stack_key(t_stack **stack_key)
  * @param move 
  * @return int 
  */
-int	ft_next_key(t_stack *stack_key, int parts, int move)
+int	ft_next_key(t_stack *stack_key, int slice, int move)
 {
 	int	pos;
 	int	size;
 	int	key;
 
 	size = ft_lst_size(stack_key);
-	//parts = 1;
-	pos = size / parts;
+	pos = size / slice;
 	pos *= move;
 	key = ft_pos(stack_key, pos);
 	return (key);

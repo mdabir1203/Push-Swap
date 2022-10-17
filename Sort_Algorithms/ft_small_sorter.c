@@ -6,13 +6,13 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 05:49:21 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/09 21:21:54 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/17 23:31:02 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
+static void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	while (*stack_b != NULL)
 		ft_pa(stack_a, stack_b);
@@ -28,33 +28,33 @@ void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
  * 
  * @param stack_a 
  */
-void	ft_tri_sort(t_stack **stack_a)
+void	ft_tri_sort(t_stack **stack)
 {	
 	int			top;
 	int			mid;
 	int			bottom;
 
-	if ((*stack_a) && (*stack_a)->next == NULL)
+	if ((*stack) && (*stack)->next == NULL)
 		return ;
-	top = (*stack_a)->val;
-	mid = (*stack_a)->next->val;
-	bottom = (*stack_a)->next->next->val;
-	if ((top > mid) && (top < bottom) && (mid < bottom))
-		ft_sa(stack_a);
-	else if ((top > mid) && (top > bottom) && (mid > bottom))
+	top = (*stack)->val;
+	mid = (*stack)->next->val;
+	bottom = (*stack)->next->next->val;
+	if ((top > mid) && (bottom > top))
+		ft_sa(stack);
+	else if ((top > mid) && (mid > bottom))
 	{
-		ft_sa(stack_a);
-		ft_rra(stack_a);
+		ft_sa(stack);
+		ft_rra(stack);
 	}
-	else if ((top > mid) && (top > bottom) && (mid < bottom))
-		ft_ra(stack_a);
-	else if ((top < mid) && (top < bottom) && (mid > bottom))
+	else if ((bottom > mid) && (top > bottom))
+		ft_ra(stack);
+	else if ((mid > bottom) && (bottom > top))
 	{
-		ft_sa(stack_a);
-		ft_ra(stack_a);
+		ft_sa(stack);
+		ft_ra(stack);
 	}
-	else if ((top < mid) && (top > bottom) && (mid > bottom))
-		ft_rra(stack_a);
+	else if ((mid > top) && (top > bottom))
+		ft_rra(stack);
 }
 
 /**
