@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:34:04 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/17 23:54:58 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/18 15:41:46 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,16 @@ void	ft_sb(t_stack	**stack)
 	write (1, "sb\n", 3);
 }
 
-// /**
-//  * @brief ss ( sa and sb at the same time)
-//  * 
-//  */
+/**
+ * @brief ss ( sa and sb at the same time)
+ * 
+ */
 
-// void	ft_ss(t_stack	**stack_a, t_stack	**stack_b)
-// {
-// 	if (!stack_a || !stack_b)
-// 		return ;
-// 	ft_sa(stack_a);
-// 	ft_sb(stack_b);
-// 	write (1, "ss\n", 3);
-// }
+void	ft_ss(t_stack	**stack_a, t_stack	**stack_b)
+{
+	if (!stack_a || !stack_b)
+		return ;
+	ft_sa(stack_a);
+	ft_sb(stack_b);
+	write (1, "ss\n", 3);
+}

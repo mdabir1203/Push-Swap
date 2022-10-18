@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:46:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/17 23:23:07 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/19 01:02:40 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,15 +97,15 @@ int	ft_slice_set(int size)
 	if (ft_stack_medium(size) == true)
 	{
 		if (size <= 25)
-			slice = 2;
+			slice = 3;
 		else if (size <= 50)
-			slice = 4;
+			slice = 4.1;
 		else if (size <= 75)
 			slice = 5;
 		else if (size <= 100)
-			slice = 5.2;
+			slice = 4.2;
 	}
 	else if (ft_stack_big(size) == true)
-		slice = 14;
+		slice = 13.5;
 	return (slice);
 }
