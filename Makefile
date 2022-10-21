@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/14 03:56:30 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/21 06:04:59 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ NAME    = push_swap
 CC 		= gcc
 DEBUG ?= 0
 ifeq ($(DEBUG),1)
-    CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
+    CFLAGS	= -Wall -Wextra -Werror
 else
-	CFLAGS	= -Wall -Wextra -Werror
+	CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 endif
 # Including the directories 
 HEADER  = -I Includes -I ./libs/libft

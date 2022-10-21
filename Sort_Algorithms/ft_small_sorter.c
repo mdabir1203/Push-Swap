@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 05:49:21 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/17 23:31:02 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/21 06:10:25 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ static void	ft_push_a(t_stack **stack_a, t_stack **stack_b)
  */
 void	ft_tri_sort(t_stack **stack)
 {	
-	int			top;
-	int			mid;
-	int			bottom;
+	int			*top;
+	int			*mid;
+	int			*bottom;
 
 	if ((*stack) && (*stack)->next == NULL)
 		return ;
-	top = (*stack)->val;
-	mid = (*stack)->next->val;
-	bottom = (*stack)->next->next->val;
+	top = stack->val;
+	mid = stack->next->val;
+	bottom = stack->next->next->val;
 	if ((top > mid) && (bottom > top))
 		ft_sa(stack);
 	else if ((top > mid) && (mid > bottom))
