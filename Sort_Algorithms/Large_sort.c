@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/21 20:09:53 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/21 20:47:54 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 	int		min;
 
 	tmp = *stack_a;
-	while (ft_push_chk(*stack_a, key) == false)
+	while (tmp && ft_push_chk(*stack_a, key) == false)
 	{
 		val = tmp->val;
 		if (val <= key)
@@ -99,7 +99,7 @@ static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 		min = ft_min(*stack_b);
 		if (val == min)
 			ft_rb(stack_b);
-		stack_b = stack_b->next;
+		//stack_b = stack_b->next;
 	}
 }
 
