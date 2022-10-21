@@ -1,21 +1,27 @@
 {
-	// Use IntelliSense to learn about possible attributes.
-	// Hover to view descriptions of existing attributes.
-	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"name": "(lldb) Launch",
-			"type": "cppdbg",
-			"request": "launch",
-			"program": "${workspaceFolder}/push_swap",
-			"args": ["4","1"],
-			"stopAtEntry": false,
-			"cwd": "${fileDirname}",
-			"environment": [],
-			"externalConsole": false,
-			"MIMode": "lldb"
-		},
-
-	]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug",
+      "program": "${workspaceFolder}/push_swap",
+      "args": [
+        "63 76 79 27 36 88 12 37 87 30 10 69 49 54 44 83 93 60 13 4 41 43 66 19 42 52 2 23 91 71 82 50 38 34 72 61 98 35 81 33 74 8 78 18 89 67 25 28 53 3 0 95 90 77 9 51 85 97 6 86 55 21 70 75 22 59 64 14 24 7 84 94 73 16 100 39 40 45 99 17 32 29 48 80 96 15 46 11 1 20 57"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "/Users/mabbas/Projects/Push_Swap_main",
+      "program": "/Users/mabbas/Projects/Push_Swap_main/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb"
+    }
+  ]
 }

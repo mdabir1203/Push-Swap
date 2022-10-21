@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 02:05:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/14 02:53:10 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/21 04:59:15 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static void	ft_split_process(char **argv, t_stack **stack, bool *error)
 
 	i = 0;
 	temp = NULL;
-	split = ft_split(argv[i++], ' ');
+	split = ft_split(argv[1], ' ');
 	while (split[i] != NULL)
 	{
 		val = ft_atol(split[i], error);

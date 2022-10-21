@@ -6,14 +6,13 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/17 23:30:13 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/21 04:46:23 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
-
 /**
  * @brief While using the algo for sorting larger values I use something 
  *        called key to divide the partition and so it is an integral
@@ -91,7 +90,7 @@ static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 	int		min;
 
 	tmp = *stack_a;
-	while (ft_push_chk(*stack_a, key) == false)
+	while (tmp && ft_push_chk(*stack_a, key) == false)
 	{
 		val = tmp->val;
 		if (val <= key)
@@ -100,8 +99,6 @@ static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 		if (val == min)
 			ft_rb(stack_b);
 		tmp = tmp->next;
-		if (tmp == NULL)
-			tmp = *stack_a;
 	}
 }
 

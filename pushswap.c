@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:17:11 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/17 21:10:57 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/21 03:56:13 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc == 2)
-		return (0);
 	if (ft_stack_build(argc, argv, &stack_a) == false)
 	{
 		ft_del_stack(&stack_a);
