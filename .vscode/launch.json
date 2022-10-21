@@ -1,11 +1,36 @@
 {
   "version": "0.2.0",
   "configurations": [
-  {
-	"type": "lldb",
-	"request": "launch",
-	"name": "Launch",
-	"program": "${workspaceFolder}/push_swap",
-	"args": [-6 -169 0 -149 -23 -125 -63 -71 -135 -156 -178 -32 -50 -68 -122 -108 -112 -131 -129 -170 -100 -88 -26 -145 -184 -171 -121 -164 -179 -163 -82 -43 -25 -132 -37 -16 -168 -161 -180 -103 -165 -60 -35 -84 -38 -133 -111 -146 -92 -118 -31 -21 -46 -73 -81 -86 -120 -128 -104 -94 -200 -148 -14 -2 -190 -151 -72 -98 -42 -123 -172 -116 -142 -74 -167 -199 -99 -53 -49 -160 -10 -28 -127 -57 -124 -11 -105 -85 -140 -147 -159 -70 -41 -152 -80 -8 -66 -119 -157 -93
-]
-,
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Launch",
+      "program": "/Users/mabbas/Projects/Push_Swap_main/push_swap",
+      "args": [
+        "87",
+        "58",
+        "105",
+        "64",
+        "36",
+        "23",
+        "10",
+        "51",
+        "56",
+        "94",
+        "103"
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "/Users/mabbas/Projects/Push_Swap_main",
+      "program": "/Users/mabbas/Projects/Push_Swap_main/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb"
+    }
+  ]
+}

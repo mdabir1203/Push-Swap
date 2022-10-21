@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/21 19:23:32 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/21 19:57:08 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ submodule:
 	git submodule update
 
 $(NAME): $(OBJS) 
-	@$(CC) $(CFLAGS) -g -fsanitize=address $(OBJS) $(HEADER) $(LIBFT)libft.a -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(HEADER) $(LIBFT)libft.a -o $(NAME)
 	@say Have you summoned me?
 
 libft:
