@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 05:49:21 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/24 21:55:12 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/25 01:54:20 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,16 @@ void	ft_sort_stack_b(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+/**
+ * @brief This function is used to sort if 2 numbers existed
+ *        by swapping in stack a. Also calling for the sorting 
+ *        of stack b and then pushed back to a. This kind of
+ *        calculation might be a bit costly. If somebody knows
+ *        how to optimize please do share.
+ * 
+ * @param stack_a 
+ * @param stack_b 
+ */
 void	ft_sort_small(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;

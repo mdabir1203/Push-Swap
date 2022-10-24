@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/24 23:02:00 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/25 01:52:15 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	ft_check_valid_input(char *str, bool *error)
 {
 	int	i;
 
-	// if (*str++ == 47)
-	// 	*error = true;
 	if (ft_strlen(str) > 11)
 		*error = true;
 	i = 0;

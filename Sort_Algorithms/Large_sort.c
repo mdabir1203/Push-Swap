@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/25 00:15:50 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/25 01:51:54 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,8 +171,6 @@ void	ft_sort_large_elem(t_stack **stack_a, t_stack **stack_b)
 	ft_sort_stack_b(stack_a, stack_b);
 	if (ft_lst_size(*stack_a) == 3)
 		ft_tri_sort(stack_a);
-	// else
-	// 	ft_del_stack(&st_key);
 	ft_sort_slice_a(stack_a, stack_b);
 	ft_del_stack(&st_key);
 }
