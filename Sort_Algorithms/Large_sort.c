@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/24 22:50:18 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/25 00:15:50 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,10 @@ static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 	{
 		val = tmp->val;
 		if (val <= key)
+		{
 			ft_element_push_b(stack_a, stack_b, val);
+			tmp = *stack_a;
+		}
 		min = ft_min(*stack_b);
 		if (val == min)
 			ft_rb(stack_b);
@@ -168,8 +171,8 @@ void	ft_sort_large_elem(t_stack **stack_a, t_stack **stack_b)
 	ft_sort_stack_b(stack_a, stack_b);
 	if (ft_lst_size(*stack_a) == 3)
 		ft_tri_sort(stack_a);
-	else
-		ft_del_stack(&st_key);
+	// else
+	// 	ft_del_stack(&st_key);
 	ft_sort_slice_a(stack_a, stack_b);
 	ft_del_stack(&st_key);
 }
