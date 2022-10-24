@@ -7,17 +7,17 @@
       "name": "Launch",
       "program": "/Users/mabbas/Projects/Push_Swap_main/push_swap",
       "args": [
-        "87",
-        "58",
-        "105",
-        "64",
-        "36",
-        "23",
+        "1",
+        "11",
         "10",
-        "51",
-        "56",
-        "94",
-        "103"
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2"
       ]
     },
     {
@@ -29,8 +29,8 @@
       "externalConsole": false,
       "cwd": "/Users/mabbas/Projects/Push_Swap_main",
       "program": "/Users/mabbas/Projects/Push_Swap_main/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb"
+      "MIMode": "lldb",
+      "miDebuggerPath": "lldb"
     }
   ]
 }

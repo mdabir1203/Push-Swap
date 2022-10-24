@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:46:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/21 20:01:26 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 21:02:48 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,6 @@ int	ft_slice_set(int size)
 			slice = 4.2;
 	}
 	else if (ft_stack_big(size) == true)
-		slice = 13.5;
+		slice = 14;
 	return (slice);
 }

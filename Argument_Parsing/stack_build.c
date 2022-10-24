@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 02:05:35 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/21 04:59:15 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 20:47:06 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_del_stack(t_stack **stack)
 		free(current);
 		current = tmp;
 	}
-	*stack = NULL;
+	current = NULL;
 }
 
 /**
@@ -48,7 +48,7 @@ void	ft_del_stack(t_stack **stack)
  * @param error 
  */
 
-static void	ft_arg_process(int argc, char **argv, t_stack **stack, bool *error)
+void	ft_arg_process(int argc, char **argv, t_stack **stack, bool *error)
 {
 	int		i;
 	int		val;
@@ -137,9 +137,8 @@ static void	ft_split_process(char **argv, t_stack **stack, bool *error)
 
 bool	ft_stack_build(int argc, char **argv, t_stack **stack)
 {
-	bool	error;
+	static bool	error = false;
 
-	error = false;
 	if (argc == 2)
 		ft_split_process(argv, stack, &error);
 	else if (argc > 2)

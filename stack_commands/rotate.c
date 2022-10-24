@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:16:14 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/21 19:22:34 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 22:24:18 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,67 @@
 void	ft_ra(t_stack **stack_a)
 {
 	t_stack	*temp;
-	t_stack	*ind_first;
 
-	temp = *stack_a;
-	ind_first = *stack_a;
-	if ((temp)->next == NULL)
+	temp = NULL;
+	if (!*stack_a)
 		return ;
-	temp = temp->next;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = ind_first;
-	ind_first->next = NULL;
-	write (1, "ra\n", 3);
+	temp = ft_new_node((*stack_a)->val);
+	ft_back_add(stack_a, temp);
+	temp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	free(temp);
+	temp = NULL;
+	write(1, "ra\n", 3);
 }
+
+// void	ft_rb(t_stack **stack_b)
+// {
+// 	t_stack	*tmp;
+// 	t_stack	*lst;
+
+// 	// if ((*stack_b)->next == NULL)
+// 		// return ((void)write(1, "ra\n", 3));
+// 	tmp = *stack_b;
+// 	lst = *stack_b;
+// 	// stack_b = &(*stack_b)->next;
+// 	*stack_b = (*stack_b)->next;
+// 	while (lst->next != NULL)
+// 		lst = lst->next;
+// 	lst->next = tmp;
+// 	tmp->next = NULL;
+// 	write (1, "rb\n", 3);
+// }
+
+// void	ft_rb(t_stack **stack_b)
+// {
+// 	t_stack	*tmp;
+// 	t_stack	*lst;
+
+// 	if ((*stack_b)->next == NULL)
+// 		return ((void)write(1, "rb\n", 3));
+// 	tmp = *stack_b;
+// 	lst = *stack_b;
+// 	*stack_b = (*stack_b)->next;
+// 	while (lst->next != NULL)
+// 		lst = lst->next;
+// 	lst->next = tmp;
+// 	tmp->next = NULL;
+// 	write(1, "rb\n", 3);
+// }
 
 void	ft_rb(t_stack **stack_b)
 {
 	t_stack	*temp;
-	t_stack	*ind_first;
 
-	temp = *stack_b;
-	ind_first = *stack_b;
-	if ((temp)->next == NULL)
+	if (!*stack_b)
 		return ;
-	temp = temp->next;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = ind_first;
-	ind_first->next = NULL;
-	write (1, "rb\n", 3);
+	temp = ft_new_node((*stack_b)->val);
+	ft_back_add(stack_b, temp);
+	temp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	free(temp);
+	temp = NULL;
+	write(1, "rb\n", 3);
 }
 
 /**

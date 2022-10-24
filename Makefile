@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 21:06:32 by mabbas            #+#    #+#              #
-#    Updated: 2022/10/21 19:57:08 by mabbas           ###   ########.fr        #
+#    Updated: 2022/10/24 00:43:22 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ DEBUG ?= 0
 ifeq ($(DEBUG),1)
     CFLAGS	= -Wall -Wextra -Werror
 else
-	CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
+	CFLAGS	= -Wall -Wextra -Werror -g
 endif
 # Including the directories 
 HEADER  = -I Includes -I ./libs/libft

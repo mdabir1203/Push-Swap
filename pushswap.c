@@ -6,21 +6,21 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:17:11 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/21 19:04:50 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 20:59:12 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Includes/push_swap.h"
-#include <stdio.h>
 
-// void	print_list(t_stack	*head)
-// {
-// 	while (head)
-// 	{
-// 		printf("%2d\n", head->val);
-// 		head = head->next;
-// 	}
-// }
+void	print_list(t_stack	*head)
+{
+	while (head)
+	{
+		printf("%2d ", head->val);
+		head = head->next;
+	}
+	printf("\n");
+}
 
 int	main(int argc, char **argv)
 {

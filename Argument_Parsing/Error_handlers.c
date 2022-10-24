@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:34:37 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/21 02:43:06 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 03:49:56 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
  * 		  otherwise false.
  * @param error 
  */
-void	ft_error_msg(bool error)
+void	ft_error_msg(bool error_)
 {
-	if (error == true)
+	if (error_ == true)
 	{
 		write(2, "Error\n", 6);
 		exit (EXIT_FAILURE);
