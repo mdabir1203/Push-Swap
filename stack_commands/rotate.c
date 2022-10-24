@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:16:14 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/24 22:24:18 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 22:27:59 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ void	ft_rb(t_stack **stack_b)
 
 	if (!*stack_b)
 		return ;
+	if ((*stack_b)->next == NULL)
+		return ((void) write(1, "rb\n", 3));
 	temp = ft_new_node((*stack_b)->val);
 	ft_back_add(stack_b, temp);
 	temp = *stack_b;

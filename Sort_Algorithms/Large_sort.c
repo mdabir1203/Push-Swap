@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:06:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/24 21:43:43 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 22:50:18 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,18 @@ static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b, int key)
 	int		min;
 
 	tmp = *stack_a;
-	while (ft_push_chk(*stack_a, key) == false) 
+	while (ft_push_chk(*stack_a, key) == false)
 	{
-		// printf("in large\n");
 		val = tmp->val;
 		if (val <= key)
 			ft_element_push_b(stack_a, stack_b, val);
-		// if (!stack_b && !(*stack_b))
-		// 	break ;
 		min = ft_min(*stack_b);
 		if (val == min)
 			ft_rb(stack_b);
 		tmp = tmp->next;
 		if (tmp == NULL)
 			tmp = *stack_a;
+	// printf("in large\n");
 	}
 }
 
@@ -168,7 +166,10 @@ void	ft_sort_large_elem(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	push_slice_b(stack_a, stack_b, &st_key);
 	ft_sort_stack_b(stack_a, stack_b);
-	ft_tri_sort(stack_a);
+	if (ft_lst_size(*stack_a) == 3)
+		ft_tri_sort(stack_a);
+	else
+		ft_del_stack(&st_key);
 	ft_sort_slice_a(stack_a, stack_b);
 	ft_del_stack(&st_key);
 }
