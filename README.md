@@ -5,6 +5,11 @@ Learning : The project is about application of Sorting Algorithms and its usage 
 
 ## Outcome from the Project : 
 
+Input Handling / Parsing : 
+This link has a lot of way but the best one I found was by James Williams :
+
+https://stackoverflow.com/questions/2789987/any-good-idioms-for-error-handling-in-straight-c-programs
+
 Implementation of various Sorting Algorithms : 
 
 1. Bubble Sort : 
@@ -27,7 +32,7 @@ Data Structures Used :
 1. Singly Linked List with Double Pointers as variables -->>
 <img width="868" alt="image" src="https://user-images.githubusercontent.com/66947064/197654603-b05279d6-420f-4171-8410-631743b7d9d0.png">
 
-Source: https://dev-notes.eu/2018/07/double-pointers-and-linked-list-in-c/ (Check it good one)
+**_src:_** Visit https://dev-notes.eu/2018/07/double-pointers-and-linked-list-in-c/ (Check it good one)
 
 N:B: Any algorithm can be implemented on different Data Structure ( Array or Linked list / etc) be implemented.
 Look into this in details : https://www.geeksforgeeks.org/what-should-i-learn-first-data-structures-or-algorithms/
@@ -40,23 +45,31 @@ Look into this in details : https://www.geeksforgeeks.org/what-should-i-learn-fi
 
 3. Memory Leaks / Seg Fault -->> 3 common ways to detect -->>
 
-**(Mac OS):** 1. ```leaks --atExit -- ./prog_name Args ```
+**(Mac OS):**  ```
+               leaks --atExit -- ./prog_name Args
+               ```
 
- Run  ``` Export MallocStackLogging=1 ``` Extension to see detailed results.
+ Run      ``` 
+          Export MallocStackLogging=1
+          ``` 
+Extension to see detailed results.
 src: https://developer.apple.com/library/archive/documentation/Performance/Conceptual/ManagingMemory/Articles/MallocDebug.html
 
 **(Mac OS/Linux):**       
 
-2. ```Valgrind --leak-check=full ./prog_name Args.``` 
-      You can use `-s`  to suppress the leaks from the MAC library and also it might show you the Invalid Read/Write Errors which is suppressed due to overwhelming leaking issues from general MAC library.
+2. ```
+   Valgrind --leak-check=full ./prog_name Args.
+   ``` 
+      
+You can use `-s` to suppress the leaks from the MAC library and also it might show you the Invalid Read/Write Errors which is suppressed due to overwhelming leaking issues from general MAC library.
 
 ***(Mac OS/Linux): ** 
 
- 3. ```--fsanitize=address```  flag while compiling . Remember must to use``` -g``` flag also whenever you want to Debug something. 
-           Once you found the error search it in google with the error name / address it might give you a hint where to look if 
+ 3. ```--fsanitize=address``` flag while compiling . Remember must to use ``` -g``` flag also whenever you want to Debug something. 
+           Once you found the error search it in google with the ** error name / address** it might give you a hint where to look if 
            you don't have any.
            
-   Disclaimer : Don't follow blindly only one tools to check. Use any one of them. Each gives you different perspectives. So get on full swing with memory leaks and also don't forget to ask peers if you face this: 
+_Disclaimer _: Don't follow blindly only one tools to check. Use any one of them. Each gives you different perspectives. So get on full swing with memory leaks and also don't forget to ask peers if you face this: 
    
 ![tumblr_55bdff208b4a006a801d369a54514df9_e56fc238_500](https://user-images.githubusercontent.com/66947064/197657211-5a717e6e-5c20-4843-950b-98a5196887b9.gif)
 
