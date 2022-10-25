@@ -18,7 +18,7 @@ Possible Instructions :
 
 ## Before you delve into the beneath knowledge : 
 
-![image](https://user-images.githubusercontent.com/66947064/197668099-48a6767c-be8f-4c89-ad46-32fdce821c67.png)![image](https://user-images.githubusercontent.com/66947064/197667213-903f2613-bd5f-49a8-a0a0-c3b0ceb2fc8b.png)
+![image](https://user-images.githubusercontent.com/66947064/197668099-48a6767c-be8f-4c89-ad46-32fdce821c67.png)
 
 
 ## Learning outcome from the Project : 
@@ -97,8 +97,7 @@ Some Recommendations I gathered from Peer-learning (Will add later more) -->>>>
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/66947064/197656298-4484ab5b-1b31-4ff3-9cf0-6f10f43ef9de.png">
 src: https://developer.ibm.com/articles/au-toughgame/
 
-# Last but not least I am always open to contribution and optimization of any implemented idea. Please do share your valuable comments or optimization idea
-  And that is the only way we can grow :) 
+## Last but not least I am always open to contribution and optimization of any implemented idea. Please do share your valuable comments or optimization idea and that is the only way we can grow :) 
   
   
   
