@@ -1,6 +1,7 @@
-# ![image](https://user-images.githubusercontent.com/66947064/197666155-16b60788-9334-4e91-9ef3-b74f9b9c960a.png)
+# ![image](https://user-images.githubusercontent.com/66947064/197669479-f94eb94a-cb99-4fea-b426-5dd460a4a900.png)
 
-## A Project to Sort data on a Stack, with a limited set of instructions, using the lowest possible number of actions. 
+
+##     A Project to Sort data on a Stack, with a limited set of instructions, using the lowest possible number of actions. 
 
 Possible Instructions :
 
