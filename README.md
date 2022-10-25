@@ -40,20 +40,30 @@ Look into this in details : https://www.geeksforgeeks.org/what-should-i-learn-fi
 
 3. Memory Leaks / Seg Fault -->> 3 common ways to detect -->>
 
-(Mac OS): 1. leaks --atExit -- ./prog_name Args
-                  Use Export MallocStackLogging=1 Extension to see detailed results
-(Mac OS/Linux):       
-          2. Valgrind --leak-check=full ./prog_name Args.  ( You can use -s to suppress the leaks from the MAC library and also 
-           it might show you the Invalid Read/Write Errors which is suppressed due to overwhelming leaking issues from general MAC library.
-(Mac OS/Linux):  
-        3. Using the --fsanitize=address flag while compiling . Remember must to use -g flag also whenever you want to Debug something. 
+**(Mac OS):** 1. ```leaks --atExit -- ./prog_name Args ```
+
+ Run  ``` Export MallocStackLogging=1 ``` Extension to see detailed results.
+src: https://developer.apple.com/library/archive/documentation/Performance/Conceptual/ManagingMemory/Articles/MallocDebug.html
+
+**(Mac OS/Linux):**       
+
+2. ```Valgrind --leak-check=full ./prog_name Args.``` 
+      You can use `-s`  to suppress the leaks from the MAC library and also it might show you the Invalid Read/Write Errors which is suppressed due to overwhelming leaking issues from general MAC library.
+
+***(Mac OS/Linux): ** 
+
+ 3. ```--fsanitize=address```  flag while compiling . Remember must to use``` -g``` flag also whenever you want to Debug something. 
            Once you found the error search it in google with the error name / address it might give you a hint where to look if 
            you don't have any.
            
-   Disclaimer : Don't follow blindly only one tools to check. Use any one of them. Each gives you different perspectives. So happy memory leak finding 
-                and also finding solution:
+   Disclaimer : Don't follow blindly only one tools to check. Use any one of them. Each gives you different perspectives. So get on full swing with memory leaks and also don't forget to ask peers if you face this: 
+   
+![tumblr_55bdff208b4a006a801d369a54514df9_e56fc238_500](https://user-images.githubusercontent.com/66947064/197657211-5a717e6e-5c20-4843-950b-98a5196887b9.gif)
 
-Some Recommendations (P:S: -->> I am still trying to follow this. Saw this really late) : 
+
+Some Recommendations I gathered from Peer-learning (Will add later more) -->>>>
+
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/66947064/197656298-4484ab5b-1b31-4ff3-9cf0-6f10f43ef9de.png">
+src: https://developer.ibm.com/articles/au-toughgame/
 
          
