@@ -6,12 +6,11 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 18:20:50 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/21 03:56:59 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 22:41:00 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
-
 /**
  * @brief Taking the First element at the top of b and put it at 
  *        top of a. Do nothing if b is empty.
@@ -32,7 +31,7 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 	*stack_b = (*stack_b)->next;
 	free(temp);
 	temp = NULL;
-	write (1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }
 
 /**
@@ -54,5 +53,5 @@ void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 	*stack_a = (*stack_a)->next;
 	free(temp);
 	temp = NULL;
-	write (1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }

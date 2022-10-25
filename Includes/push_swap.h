@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:12:31 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/21 00:48:54 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/24 03:47:47 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include<unistd.h>
 # include<stdlib.h> // This is for error Macros
 # include<stdbool.h> // This is for boolean flags
+# include <stdio.h> // remove later lol
 
 /* ------ Struct for my list of Stack ------ */
 
@@ -111,5 +112,6 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 t_stack	*ft_copy_stack(t_stack *stack_a);
 int		ft_next_key(t_stack *stack_key, int slice, int move);
 int		ft_key(t_stack **stack_a, t_stack **stack_key, int parts, int move);
+void	ft_arg_process(int argc, char **argv, t_stack **stack, bool *error);
 
 #endif

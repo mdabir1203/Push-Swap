@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 02:04:44 by mabbas            #+#    #+#             */
-/*   Updated: 2022/10/14 00:32:55 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/10/23 21:58:54 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_min(t_stack	*stack)
 {
 	int	min;
 
-	if (!stack || !stack->next)
+	if (!stack)
 		return (INT_MAX);
 	min = stack->val;
 	while (stack != NULL)
