@@ -12,20 +12,20 @@ https://stackoverflow.com/questions/2789987/any-good-idioms-for-error-handling-i
 
 Implementation of various Sorting Algorithms : 
 
-1. Bubble Sort : 
+## 1. Bubble Sort : 
 
    <img width="340" alt="image" src="https://user-images.githubusercontent.com/66947064/197652975-5fe76620-ab49-4e66-82ae-bfe6e86e1638.png"> <img width="340" alt="image" src="https://user-images.githubusercontent.com/66947064/197653028-d5716dbb-f9e6-4490-9115-c85e3bb486cf.png">
 
-2. Quick Sort :
+## 2. Quick Sort :
 
    <img width="340" alt="image" src="https://user-images.githubusercontent.com/66947064/197653290-0ade4fb8-1631-441c-b357-64c86c3235dd.png"> <img width="340" height="155" alt="image" src="https://user-images.githubusercontent.com/66947064/197653332-c8fc8e07-6697-47b5-a7cc-8788adecdc3f.png">
 
-3. Insertion Sort :
+## 3. Insertion Sort :
 
-      <img width="265" height="150" alt="image" src="https://user-images.githubusercontent.com/66947064/197653656-4925941a-adba-400c-9f52-6ae3c59af077.png">     <img width="450" alt="image" src="https://user-images.githubusercontent.com/66947064/197653983-4c0730c7-f280-4b28-a5c2-8c3251c71975.png">  <img width="315" alt="image" src="https://user-images.githubusercontent.com/66947064/197654209-af2f1880-eac8-446d-8100-333687480162.png">
+<img width="265" height="150" alt="image" src="https://user-images.githubusercontent.com/66947064/197653656-4925941a-adba-400c-9f52-6ae3c59af077.png">     <img width="450" alt="image" src="https://user-images.githubusercontent.com/66947064/197653983-4c0730c7-f280-4b28-a5c2-8c3251c71975.png">  <img width="315" alt="image" src="https://user-images.githubusercontent.com/66947064/197654209-af2f1880-eac8-446d-8100-333687480162.png">
 
+##  !_! ......... Other ideas are commented inside the function of the code ............... !-!
 
-......... Other ideas are commented inside the function of the code ...............
 
 Data Structures Used : 
 
