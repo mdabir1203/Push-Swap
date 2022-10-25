@@ -1,9 +1,21 @@
-# Push-Swap
-A project to sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. 
+# ![image](https://user-images.githubusercontent.com/66947064/197666155-16b60788-9334-4e91-9ef3-b74f9b9c960a.png)
 
-Learning : The project is about application of Sorting Algorithms and its usage in checking :) 
+## A Project to Sort data on a Stack, with a limited set of instructions, using the lowest possible number of actions. 
 
-## Outcome from the Project : 
+Possible Instructions :
+
+ Push -- _**pa, pb**_
+ 
+ Swap -- _**sa, sb**_
+ 
+ Rotate -- _**ra, rb**_
+ 
+ Reverse Rotate -- _**rra, rrb**_
+
+  Every instruction is based on only one element operation
+  Swap, Rotate and Reverse Rotate has combined operations --  _**ss, rr, rrr**_
+  
+## Learning outcome from the Project : 
 
 Input Handling / Parsing : 
 This link has a lot of way but the best one I found was by James Williams :
